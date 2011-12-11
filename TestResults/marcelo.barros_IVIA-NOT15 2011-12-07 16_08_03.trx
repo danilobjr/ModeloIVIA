@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="0d8a1f23-0d7b-494e-814a-1c0e96b3c49f" name="marcelo.barros@IVIA-NOT15 2011-12-07 16:08:03" runUser="IVIA\marcelo.barros" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ea6b27d7-3c5c-46fc-b4b9-12f9220380db">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="marcelo.barros_IVIA-NOT15 2011-12-07 16_08_03">
+      <DeploymentItem filename="c:\users\marcelo.barros\documents\visual studio 2010\Projects\ModeloIVIA\ModeloIVIA\bin\Debug\ModeloIVIA.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-12-07T16:08:03.5159634-03:00" queuing="2011-12-07T16:08:03.6054813-03:00" start="2011-12-07T16:08:03.6344871-03:00" finish="2011-12-07T16:08:04.2731148-03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestaLoginValido" storage="c:\users\marcelo.barros\documents\visual studio 2010\projects\modeloivia\modeloivia.tests\bin\debug\modeloivia.tests.dll" id="a298a296-233e-077c-6bde-f4c9671fd19b">
+      <Execution id="2937ff97-b0c9-44e7-8464-14dadb0ff500" />
+      <TestMethod codeBase="c:/users/marcelo.barros/documents/visual studio 2010/Projects/ModeloIVIA/ModeloIVIA.Tests/bin/Debug/ModeloIVIA.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ModeloIVIA.Tests.TestaUsuarioLogin, ModeloIVIA.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestaLoginValido" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="a298a296-233e-077c-6bde-f4c9671fd19b" executionId="2937ff97-b0c9-44e7-8464-14dadb0ff500" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="2937ff97-b0c9-44e7-8464-14dadb0ff500" testId="a298a296-233e-077c-6bde-f4c9671fd19b" testName="TestaLoginValido" computerName="IVIA-NOT15" duration="00:00:00.0423594" startTime="2011-12-07T16:08:03.6569916-03:00" endTime="2011-12-07T16:08:04.0410684-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2937ff97-b0c9-44e7-8464-14dadb0ff500">
+    </UnitTestResult>
+  </Results>
+</TestRun>

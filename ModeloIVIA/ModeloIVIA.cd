@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ModeloIVIA.Grupo">
+    <Position X="6.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Grupo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Perfil" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ModeloIVIA.Usuario">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAACAAAAAAAABAAAAAACAAAAAAAAAQAAEAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Grupo" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ModeloIVIA.Funcionalidade">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAAAAAAAAQAAAAAAAAAAAAAACAAAAAEAAAA=</HashCode>
+      <FileName>Funcionalidade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Perfil" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="ModeloIVIA.Perfil">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAABAAA=</HashCode>
+      <FileName>Perfil.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

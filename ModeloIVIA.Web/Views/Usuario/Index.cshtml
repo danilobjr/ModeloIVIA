@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ModeloIVIA.Usuario>
+
+@{
+    ViewBag.Title = "Modelo IVIA - Usuários";
+}
+
+@section ScriptsOnHead {
+    
+    <script src="@Url.Content("~/Scripts/App/Usuario/TabelaUsuarios.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/Usuario/UsuarioViewModel.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/Usuario/UsuarioScript.js")" type="text/javascript"></script>
+}
+
+<h2>Usuários</h2>
+
+<table id="usuarios">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Login
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Grupo
+            </th>
+            <th>
+                Perfil
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Login)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grupo.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grupo.Perfil)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

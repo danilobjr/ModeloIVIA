@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloIVIA", "ModeloIVIA\ModeloIVIA.csproj", "{CF1519EC-3BAD-4579-82AE-79C8453D7F8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloIVIA.Tests", "ModeloIVIA.Tests\ModeloIVIA.Tests.csproj", "{B0D195BD-57AD-4E6C-9568-8BF8A043B7EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{679572B3-6489-4AE1-9AEB-BBB851E4CACF}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		ModeloIVIA.vsmdi = ModeloIVIA.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloIVIA.Web", "ModeloIVIA.Web\ModeloIVIA.Web.csproj", "{34435E54-7024-4D7D-B2EE-A67CE0DE105A}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ModeloIVIA.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF1519EC-3BAD-4579-82AE-79C8453D7F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1519EC-3BAD-4579-82AE-79C8453D7F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF1519EC-3BAD-4579-82AE-79C8453D7F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF1519EC-3BAD-4579-82AE-79C8453D7F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0D195BD-57AD-4E6C-9568-8BF8A043B7EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D195BD-57AD-4E6C-9568-8BF8A043B7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D195BD-57AD-4E6C-9568-8BF8A043B7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D195BD-57AD-4E6C-9568-8BF8A043B7EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34435E54-7024-4D7D-B2EE-A67CE0DE105A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34435E54-7024-4D7D-B2EE-A67CE0DE105A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34435E54-7024-4D7D-B2EE-A67CE0DE105A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34435E54-7024-4D7D-B2EE-A67CE0DE105A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

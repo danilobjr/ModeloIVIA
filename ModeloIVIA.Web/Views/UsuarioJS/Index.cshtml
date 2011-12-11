@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ModeloIVIA.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section ScriptsOnHead {
+
+    <script src="@Url.Content("~/Scripts/Componentes/Dialog.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Transicao.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Form.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/TabelaUsuarios.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/TabelaGrupos.js")" type="text/javascript"></script>
+}
+
+<header>
+    <h2>Usuários</h2>
+</header>
+
+<nav>
+    <ul>
+        <li><span>Form</span></li>
+        <li><span>Lista</span></li>
+    </ul>
+</nav>
+
+<section id="crudUsuario">
+    <div>
+        <div>
+            <label>Nome</label>
+            <br />
+            <input type="text" name="Nome" />
+        </div>
+
+        <div>
+            <label>Email</label>
+            <br />
+            <input type="text" name="Email" />
+        </div>
+
+        <div>
+            <label>Login</label>
+            <br />
+            <input type="text" name="Login" />
+        </div>
+
+        @*<div>
+            <label>Grupos</label>
+            <input type="text" name="Login" />
+        </div>*@
+    </div>
+
+    <div>
+        <table id="usuarios">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Grupo</th>
+                    <th>Perfil</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
+
+<section id="grupos">
+    <header>
+        <h4>Grupos</h4>
+    </header>
+
+    <div>
+        <table id="tabelaGrupos">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Perfil</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>

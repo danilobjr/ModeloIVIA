@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="0cbe927b-95f1-4b2c-88b8-d3d3d1f2d71c" name="marcelo.barros@IVIA-NOT15 2011-12-07 16:09:21" runUser="IVIA\marcelo.barros" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ea6b27d7-3c5c-46fc-b4b9-12f9220380db">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="marcelo.barros_IVIA-NOT15 2011-12-07 16_09_21">
+      <DeploymentItem filename="c:\users\marcelo.barros\documents\visual studio 2010\Projects\ModeloIVIA\ModeloIVIA\bin\Debug\ModeloIVIA.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-12-07T16:09:21.1329837-03:00" queuing="2011-12-07T16:09:21.2160003-03:00" start="2011-12-07T16:09:21.4115394-03:00" finish="2011-12-07T16:09:22.0726716-03:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestaLoginInvalido" storage="c:\users\marcelo.barros\documents\visual studio 2010\projects\modeloivia\modeloivia.tests\bin\debug\modeloivia.tests.dll" id="de157113-c987-793d-94bd-5a7b6c9e7065">
+      <Execution id="2b4f5578-0b81-4df4-8fb0-388dab910c0e" />
+      <TestMethod codeBase="c:/users/marcelo.barros/documents/visual studio 2010/Projects/ModeloIVIA/ModeloIVIA.Tests/bin/Debug/ModeloIVIA.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ModeloIVIA.Tests.TestaUsuarioLogin, ModeloIVIA.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestaLoginInvalido" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="de157113-c987-793d-94bd-5a7b6c9e7065" executionId="2b4f5578-0b81-4df4-8fb0-388dab910c0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="2b4f5578-0b81-4df4-8fb0-388dab910c0e" testId="de157113-c987-793d-94bd-5a7b6c9e7065" testName="TestaLoginInvalido" computerName="IVIA-NOT15" duration="00:00:00.0850424" startTime="2011-12-07T16:09:21.6145800-03:00" endTime="2011-12-07T16:09:22.0366644-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2b4f5578-0b81-4df4-8fb0-388dab910c0e">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.IsNotNull failed. Não deveria ser possível o login com pedro.junior:pedro</Message>
+          <StackTrace>   at ModeloIVIA.Tests.TestaUsuarioLogin.TestaLoginInvalido() in c:\users\marcelo.barros\documents\visual studio 2010\Projects\ModeloIVIA\ModeloIVIA.Tests\TestaUsuarioLogin.cs:line 89
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
