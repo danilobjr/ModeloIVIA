@@ -58,9 +58,14 @@
         }
 
         //if (callback)
-            _tabela.fnDeleteRow(linha, callback);
+        _tabela.fnDeleteRow(linha, callback);
         //else
-           // _tabela.fnDeleteRow(linha);
+        // _tabela.fnDeleteRow(linha);
+    };
+
+    var _obterTodasAsLinhas = function () {
+
+        return _tabela.fnGetNodes();
     };
 
 
