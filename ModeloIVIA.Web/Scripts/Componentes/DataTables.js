@@ -47,6 +47,19 @@
         _tabela.fnAddData(linha);
     };
 
+    var _adicionarLinhas = function (linhas) {
+
+        if (!(linhas instanceof Array)) {
+            throw new TypeError("_adicionarLinhas(): O parâmetro 'linhas' não é do tipo Array");
+        }
+
+        if (!linhas[0][0]) {
+            throw new RangeError("_adicionarLinhas(): O parâmetro 'linhas' deve ser um Array de duas dimensões");
+        }
+
+        _tabela.fnAddData(linhas);
+    };
+
     var _removerLinha = function (linha, callback) {
 
         if (!($(linha).is('tr')) || typeof (linha) !== "number") {
@@ -63,10 +76,28 @@
         // _tabela.fnDeleteRow(linha);
     };
 
-    var _obterTodasAsLinhas = function () {
+    //    var _obterIndiceDaLinha = function (linha) {
 
+    //        if (!($(linha).is('tr'))) {
+    //            throw new TypeError("_obterIndiceDaLinha(): O parâmetro 'linha' não é um elemento do tipo TR");
+    //        }
+
+    //        return _tabela.fnGet
+    //    };
+
+    var _obterLinha = function (indice) {
+        return _tabela.fnGetNodes(indice);
+    };
+
+    var _obterTodasAsLinhas = function () {
         return _tabela.fnGetNodes();
     };
+
+    var _limparTabela = function () {
+        _tabela.fnClearTable();
+    };
+
+    var _obter
 
 
     return {
