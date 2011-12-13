@@ -1,4 +1,5 @@
-﻿ModeloIVIA.Componente.dataTables = function () {
+﻿//ModeloIVIA.Componente.dataTables = function () {
+ModeloIVIA.Componente.DataTables = function DataTables (userConfig) {
 
     // Propriedades e Campos
 
@@ -8,6 +9,11 @@
     // Init
 
     var _init = function (elementId) {
+
+        /// <summary> 
+        /// Inicialização.
+        /// </summary>
+
         _tabela = $(elementId).dataTable({
             // Estilo
 
@@ -40,6 +46,10 @@
 
     var _adicionarLinha = function (linha) {
 
+        /// <summary>
+        /// Adiciona uma linha à tabela.
+        /// </summary>
+
         if (!(linha instanceof Array)) {
             throw new TypeError("_adicionarLinha(): O parâmetro 'linha' não é do tipo Array");
         }
@@ -62,30 +72,33 @@
 
     var _removerLinha = function (linha, callback) {
 
-        if (!($(linha).is('tr')) || typeof (linha) !== "number") {
-            throw new TypeError("_removerLinha(): O parâmetro 'linha' deve ser um número ou um elemento do tipo <TR>");
+        if (linha instanceof jQuery)
+            linha = linha[0];
+
+        if (!(linha instanceof HTMLTableRowElement) || typeof (linha) !== "number") {
+            throw new TypeError("_removerLinha(): O parâmetro 'linha' deve ser um número ou um objeto do tipo HTMLTableRowElement");
         }
 
         if (callback && typeof (callback) !== "function") {
             throw new TypeError("_removerLinha(): O parâmetro 'callback' não é uma função");
         }
 
-        //if (callback)
         _tabela.fnDeleteRow(linha, callback);
-        //else
-        // _tabela.fnDeleteRow(linha);
     };
 
-    //    var _obterIndiceDaLinha = function (linha) {
+    var _obterIndiceDaLinha = function (linha) {
 
-    //        if (!($(linha).is('tr'))) {
-    //            throw new TypeError("_obterIndiceDaLinha(): O parâmetro 'linha' não é um elemento do tipo TR");
-    //        }
+        if (linha instanceof jQuery)
+            linha = linha[0];
 
-    //        return _tabela.fnGet
-    //    };
+        if (!(linha instanceof HTMLTableRowElement)) {
+            throw new TypeError("_obterIndiceDaLinha(): O parâmetro 'linha' não é um elemento do tipo TR");
+        }
 
-    var _obterLinha = function (indice) {
+        return _tabela.fnGetPosition(linha);
+    };
+
+    var _obterLinhaPorIndice = function (indice) {
         return _tabela.fnGetNodes(indice);
     };
 
@@ -97,11 +110,16 @@
         _tabela.fnClearTable();
     };
 
-    var _obter
-
 
     return {
-        init: _init
+        init: _init,
+        adicionarLinha: _adicionarLinha,
+        adicionarLinhas: _adicionarLinhas,
+        removerLinha: _removerLinha,
+        obterIndiceDaLinha: _obterIndiceDaLinha,
+        obterLinhaPorIndice: _obterLinhaPorIndice,
+        obterTodasAsLinhas: _obterTodasAsLinhas,
+        limparTabela: _limparTabela
     };
 
 } ();
