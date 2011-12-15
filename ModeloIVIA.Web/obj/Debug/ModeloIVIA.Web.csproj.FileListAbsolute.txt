@@ -7,3 +7,12 @@ C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA.Web\bin\Entity
 C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA.Web\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA.Web\obj\Debug\ModeloIVIA.Web.dll
 C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA.Web\obj\Debug\ModeloIVIA.Web.pdb
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA.Web\bin\ModeloIVIA.Web.dll
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA.Web\bin\ModeloIVIA.Web.pdb
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA.Web\bin\EntityFramework.dll
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA.Web\bin\ModeloIVIA.dll
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA.Web\bin\ModeloIVIA.pdb
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA.Web\bin\EntityFramework.xml
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA.Web\obj\Debug\ModeloIVIA.Web.dll
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA.Web\obj\Debug\ModeloIVIA.Web.pdb

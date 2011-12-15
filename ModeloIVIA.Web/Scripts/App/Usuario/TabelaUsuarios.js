@@ -1,17 +1,18 @@
-﻿ModeloIVIA.Elemento.tabelaUsuarios = function () {
+﻿/// <reference path="../Main/MainScript.js" />
 
-    // Propriedades e Campos
 
-    var _tabela = ModeloIVIA.Componente.dataTables;
+ModeloIVIA.Elemento.TabelaUsuarios = function TabelaUsuarios(idTabela) {
 
-    // Init
+    // Construtor
 
-    var _init = function () {
-        _tabela.init("#usuarios");
-    };
+    ModeloIVIA.Componente.DataTables.call(this, idTabela);
 
-    return {
-        init: _init
-    };
+    // Os comportamentos deveriam estar aqui ou em UsuarioScript?
+    // $('.excluir').click()
+};
 
-} ();
+ModeloIVIA.Elemento.TabelaUsuarios.prototype = new ModeloIVIA.Componente.DataTables();
+
+//ModeloIVIA.Elemento.TabelaUsuarios.prototype.excluir = function (indice) {
+//    
+//};
