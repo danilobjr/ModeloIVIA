@@ -11,46 +11,104 @@
     <script src="@Url.Content("~/Scripts/App/UsuarioJS/Form.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/App/UsuarioJS/TabelaUsuarios.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/App/UsuarioJS/TabelaGrupos.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/UsuarioJSViewModel.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/UsuarioJSScript.js")" type="text/javascript"></script>
 }
 
 <header>
-    <h2>Usuários</h2>
+    <h1>Usuários</h1>
 </header>
 
-<nav>
-    <ul>
-        <li><span>Form</span></li>
-        <li><span>Lista</span></li>
-    </ul>
+<nav id="crudSections">
+    <a>Form</a>
+    <a>Lista</a>
 </nav>
 
-<section id="crudUsuario">
-    <div>
-        <div>
-            <label>Nome</label>
-            <br />
-            <input type="text" name="Nome" />
-        </div>
+<br clear="all" />
 
-        <div>
-            <label>Email</label>
-            <br />
-            <input type="text" name="Email" />
-        </div>
+<div id="crud">    
+    <div id="form">
+        @using(Html.BeginForm("Index", "UsuarioJS")) {
+            <section>
+                <header>
+                    <h1>Dados iniciais</h1>
+                </header>
 
-        <div>
-            <label>Login</label>
-            <br />
-            <input type="text" name="Login" />
-        </div>
+                <div class="campo">
+                    <label>Nome</label>
+                    <br />
+                    <input type="text" name="Nome" />
+                </div>
 
-        @*<div>
-            <label>Grupos</label>
-            <input type="text" name="Login" />
-        </div>*@
+                <div class="campo">
+                    <label>Email</label>
+                    <br />
+                    <input type="text" name="Email" />
+                </div>
+
+                <div class="campo">
+                    <label>Login</label>
+                    <br />
+                    <input type="text" name="Login" />
+                </div>
+
+                @*<div>
+                    <label>Grupos</label>
+                    <input type="text" name="Login" />
+                </div>*@
+            </section>
+
+            <br clear="all" />
+            
+            <section>
+                <header>
+                    <h1>Endereço</h1>
+                </header>
+
+                <div class="campo">
+                    <label>Logradouro</label>
+                    <br />
+                    <input type="text" name="Logradouro" />
+                </div>
+
+                <div class="campo">
+                    <label>Número</label>
+                    <br />
+                    <input type="text" name="Numero" />
+                </div>
+
+                <div class="campo">
+                    <label>Bairro</label>
+                    <br />
+                    <input type="text" name="Bairro" />
+                </div>
+
+                <br clear="all" />
+
+                <div class="campo">
+                    <label>Complemento</label>
+                    <br />
+                    <input type="text" name="Complemento" />
+                </div>
+
+                <br clear="all" />
+
+                <div class="campo">
+                    <label>Cidade</label>
+                    <br />
+                    <select name="Cidade"></select>
+                </div>
+
+                <div class="campo">
+                    <label>Estado</label>
+                    <br />
+                    <select name="Estado"></select>
+                </div>
+            </section>
+        }
     </div>
 
-    <div>
+    <div id="tabela">
         <table id="usuarios">
             <thead>
                 <tr>
@@ -60,12 +118,24 @@
                     <th>Perfil</th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+
+                @foreach (var usuario in Model)
+                {
+                    <tr>
+                        <td>@usuario.Nome</td>
+                        <td>@usuario.Email</td>
+                        <td>@usuario.Grupo.Nome</td>
+                        <td>@usuario.Grupo.Perfil.ToString()</td>
+                    </tr>
+                }
+
+            </tbody>
         </table>
     </div>
-</section>
+</div>
 
-<section id="grupos">
+<section id="grupos" style="display: none;">
     <header>
         <h4>Grupos</h4>
     </header>

@@ -46,7 +46,7 @@ section {
 ----------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 
 {
-    font-family: Raleway;
+    font-family: "Open Sans";/*Raleway;*/
     font-size: 1.5em;
     color: #000;
 }
@@ -95,15 +95,16 @@ header h1, #header h1 {
     font-weight: bold;
     padding: 5px 0;
     margin: 0;
-    color: #fff;
+    /*color: #fff;*/
     border: none;
     line-height: 2em;
     font-size: 32px !important;
-    text-shadow: 1px 1px 2px #111;
+    /*text-shadow: 1px 1px 2px #111;*/
 }
 
 #main {
-    padding: 30px 30px 15px 30px;
+    /*padding: 30px 30px 15px 30px;*/
+    padding: 50px;
     background-color: #fff;
     border-radius: 4px 0 0 0;
     -webkit-border-radius: 4px 0 0 0;
@@ -325,4 +326,13 @@ div#title {
 
 .tri-state {
     width: 6em;
+}
+
+
+/* CAMPOS */
+
+.campo
+{
+    float: left;
+    margin: 0 30px 12px 0;
 }
