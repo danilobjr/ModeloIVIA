@@ -2,7 +2,7 @@
 
 ModeloIVIA.Elemento.TabelaGrupos = function TabelaGrupos(idTabela) {
 
-    // Construtor
+    // Construtor SuperTipo
 
     ModeloIVIA.Componente.DataTables.call(this, idTabela);
 

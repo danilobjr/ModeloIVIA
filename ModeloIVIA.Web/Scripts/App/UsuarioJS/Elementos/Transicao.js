@@ -1,10 +1,7 @@
-﻿ModeloIVIA.Elemento.transicao = function () {
+﻿ModeloIVIA.Elemento.Transicao = function Transicao (idContainer) {
 
-    var _init = function () {
-    };
+    // Construtor SuperTipo
 
-    return {
-        init: _init
-    };
 
-} ();
+
+};

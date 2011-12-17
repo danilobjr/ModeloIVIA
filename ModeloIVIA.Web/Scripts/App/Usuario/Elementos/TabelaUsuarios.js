@@ -3,7 +3,7 @@
 
 ModeloIVIA.Elemento.TabelaUsuarios = function TabelaUsuarios(idTabela) {
 
-    // Construtor
+    // Construtor SuperTipo
 
     ModeloIVIA.Componente.DataTables.call(this, idTabela);
 
