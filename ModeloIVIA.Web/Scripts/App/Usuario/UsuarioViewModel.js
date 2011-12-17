@@ -1,24 +1,7 @@
-﻿ModeloIVIA.ViewModel.usuario = function () {
+﻿ModeloIVIA.ViewModel.Usuario = function UsuarioViewModel () {
 
     // Propriedades e Campos
 
-    var _tabelaUsuarios = ModeloIVIA.Elemento.tabelaUsuarios;
+    this.tabelaUsuarios = new ModeloIVIA.Elemento.TabelaUsuarios("usuarios");
 
-    // Init
-
-    var _init = function () {
-        _iniciarObjetos();
-    };
-
-    // Métodos
-
-    var _iniciarObjetos = function () {
-        _tabelaUsuarios.init();
-    };
-
-    return {
-        init: _init,
-        tabelaUsuarios: _tabelaUsuarios
-    };
-
-} ();
+};

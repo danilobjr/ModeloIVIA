@@ -1,30 +1,17 @@
-﻿ModeloIVIA.Script.usuario = function () {
+﻿/// <reference path="../Main/MainScript.js" />
+
+
+ModeloIVIA.Script.Usuario = function UsuarioScript () {
 
     // Propriedades e Campos
 
-    var _usuarioViewModel = ModeloIVIA.ViewModel.usuario;
+    var _usuarioViewModel = new ModeloIVIA.ViewModel.Usuario();
 
-    // Init
-
-    var _init = function () {
-        _iniciarViewModel();
-    };
-
-    // Métodos
-
-    var _iniciarViewModel = function () {
-        _usuarioViewModel.init();
-    };
-
-    return {
-        init: _init
-    };
-
-} ();
+};
 
 
 // Carregamento do script de usuário no onload do DOM.
 
 $(function () {
-    ModeloIVIA.Script.usuario.init();
+    new ModeloIVIA.Script.Usuario();
 });
