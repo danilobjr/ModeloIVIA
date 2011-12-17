@@ -1,3 +1,9 @@
+/*
+* File:        jquery.tipValidation.js
+* Version:     1.0
+* Author:      Danilo Jr (twitter.com/danilojrr)
+*/
+
 (function ($) {
 
     // Default options

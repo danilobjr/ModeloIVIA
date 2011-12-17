@@ -1,3 +1,9 @@
+/*
+* File:        jquery.tipValidation-rules.js
+* Version:     1.0
+* Author:      Danilo Jr (twitter.com/danilojrr)
+*/
+
 (function ($) {
 
     $.tipValidation.rules = {
