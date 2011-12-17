@@ -27,7 +27,7 @@ ModeloIVIA.Componente.Validador = function Validador(seletor) {
 
 ModeloIVIA.Componente.Validador.prototype = {
 
-    constructor: ModeloIVIA.Componente.Slider,
+    constructor: ModeloIVIA.Componente.Validador,
 
     removerTodos: function () {
 
