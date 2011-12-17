@@ -102,9 +102,11 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\App\Componentes\Validador.js" />
     <Content Include="Scripts\App\Main\MainScript.js" />
+    <Content Include="Scripts\App\UsuarioJS\Elementos\ValidadorUsuario.js" />
     <Content Include="Scripts\App\UsuarioJS\Script\UsuarioJSScript.js" />
-    <Content Include="Scripts\App\UsuarioJS\Elementos\Transicao.js" />
+    <Content Include="Scripts\App\UsuarioJS\Elementos\SliderCRUD.js" />
     <Content Include="Scripts\App\UsuarioJS\Elementos\TabelaGrupos.js" />
     <Content Include="Scripts\App\UsuarioJS\Elementos\TabelaUsuarios.js" />
     <Content Include="Scripts\App\UsuarioJS\Elementos\Form.js" />
@@ -112,9 +114,9 @@
     <Content Include="Scripts\App\Usuario\Elementos\TabelaUsuarios.js" />
     <Content Include="Scripts\App\Usuario\Script\UsuarioScript.js" />
     <Content Include="Scripts\App\Usuario\ViewModel\UsuarioViewModel.js" />
-    <Content Include="Scripts\Componentes\DataTables.js" />
-    <Content Include="Scripts\Componentes\Dialog.js" />
-    <Content Include="Scripts\Componentes\Slider.js" />
+    <Content Include="Scripts\App\Componentes\DataTables.js" />
+    <Content Include="Scripts\App\Componentes\Dialog.js" />
+    <Content Include="Scripts\App\Componentes\Slider.js" />
     <Content Include="Scripts\Plugins\DataTables\css\demo_table_jui.css" />
     <Content Include="Scripts\Plugins\DataTables\images\back_disabled.jpg" />
     <Content Include="Scripts\Plugins\DataTables\images\back_enabled.jpg" />
@@ -138,6 +140,9 @@
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\Plugins\ezSlider\jquery.ezSlider.js" />
+    <Content Include="Scripts\Plugins\TipValidation\css\jquery.tipValidation.css" />
+    <Content Include="Scripts\Plugins\TipValidation\js\jquery.tipValidation-rules.js" />
+    <Content Include="Scripts\Plugins\TipValidation\js\jquery.tipValidation.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

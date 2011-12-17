@@ -8,10 +8,9 @@ ModeloIVIA.Componente.DataTables = function DataTables(idTabela) {
     /// <param name="idTabela" type="String">
     /// Id da tabela a ser renderizada.
     /// </param>
-    /// <returns type="DataTables" />
 
 
-    // Propriedades e Campos
+    // Propriedades
 
     this.tabela = null;
     var _idTabela = '#' + idTabela;
@@ -135,7 +134,7 @@ ModeloIVIA.Componente.DataTables.prototype = {
         if (linha instanceof jQuery)
             linha = linha[0];
 
-        if (!(linha instanceof HTMLTableRowElement) || typeof (linha) !== "number") {
+        if (!(linha instanceof HTMLTableRowElement) || !(!isNaN(parseFloat(linha)) && isFinite(linha))) {
             throw new TypeError("DataTables.removerLinha(): O parâmetro 'linha' deve ser um número ou um objeto do tipo HTMLTableRowElement");
         }
 
@@ -202,7 +201,7 @@ ModeloIVIA.Componente.DataTables.prototype = {
     }
 }
 
-// Usage
+// USAGE =================================================================================//
 
 //var tabela = new ModeloIVIA.Componente.DataTables("tabelaTal");
 //tabela.adicionarLinha(['Dado da Coluna 1', 'Dado da Coluna 2', 'Dado da Coluna 3']);

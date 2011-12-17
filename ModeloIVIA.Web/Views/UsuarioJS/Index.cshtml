@@ -6,12 +6,17 @@
 
 @section ScriptsOnHead {
 
-    <script src="@Url.Content("~/Scripts/Componentes/Dialog.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Scripts/Plugins/TipValidation/css/jquery.tipValidation.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/Plugins/TipValidation/js/jquery.tipValidation.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Plugins/TipValidation/js/jquery.tipValidation-rules.js")" type="text/javascript"></script>
 
-    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Elementos/Transicao.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/Componentes/Dialog.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Elementos/SliderCRUD.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/App/UsuarioJS/Elementos/Form.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/App/UsuarioJS/Elementos/TabelaUsuarios.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/App/UsuarioJS/Elementos/TabelaGrupos.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Elementos/ValidadorUsuario.js")" type="text/javascript"></script>
 
     <script src="@Url.Content("~/Scripts/App/UsuarioJS/ViewModel/UsuarioJSViewModel.js")" type="text/javascript"></script>
 
@@ -23,8 +28,8 @@
 </header>
 
 <nav id="crudSections">
-    <a>Form</a>
-    <a>Lista</a>
+    <a data-slide="1">Form</a>
+    <a data-slide="2">Lista</a>
 </nav>
 
 <br clear="all" />
@@ -40,19 +45,19 @@
                 <div class="campo">
                     <label>Nome</label>
                     <br />
-                    <input type="text" name="Nome" />
+                    <input type="text" name="Nome" tipvalidation="required" />
                 </div>
 
                 <div class="campo">
                     <label>Email</label>
                     <br />
-                    <input type="text" name="Email" />
+                    <input type="text" name="Email" tipvalidation="required-email" />
                 </div>
 
                 <div class="campo">
                     <label>Login</label>
                     <br />
-                    <input type="text" name="Login" />
+                    <input type="text" name="Login" tipvalidation="required" />
                 </div>
 
                 @*<div>
@@ -71,19 +76,19 @@
                 <div class="campo">
                     <label>Logradouro</label>
                     <br />
-                    <input type="text" name="Logradouro" />
+                    <input type="text" name="Logradouro" tipvalidation="required" />
                 </div>
 
                 <div class="campo">
                     <label>Número</label>
                     <br />
-                    <input type="text" name="Numero" />
+                    <input type="text" name="Numero" tipvalidation="required" />
                 </div>
 
                 <div class="campo">
                     <label>Bairro</label>
                     <br />
-                    <input type="text" name="Bairro" />
+                    <input type="text" name="Bairro" tipvalidation="required" />
                 </div>
 
                 <br clear="all" />
