@@ -47,7 +47,9 @@ ModeloIVIA.Componente.DataTables = function DataTables(idTabela) {
 };
 
 ModeloIVIA.Componente.DataTables.prototype = {
+
     constructor: ModeloIVIA.Componente.DataTables,
+
     adicionarLinha: function (linha) {
 
         /// <summary>
