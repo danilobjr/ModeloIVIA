@@ -7,12 +7,15 @@
 @section ScriptsOnHead {
 
     <script src="@Url.Content("~/Scripts/Componentes/Dialog.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Transicao.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Form.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/App/UsuarioJS/TabelaUsuarios.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/App/UsuarioJS/TabelaGrupos.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/App/UsuarioJS/UsuarioJSViewModel.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/App/UsuarioJS/UsuarioJSScript.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Elementos/Transicao.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Elementos/Form.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Elementos/TabelaUsuarios.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Elementos/TabelaGrupos.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/ViewModel/UsuarioJSViewModel.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/App/UsuarioJS/Script/UsuarioJSScript.js")" type="text/javascript"></script>
 }
 
 <header>
@@ -109,7 +112,7 @@
     </div>
 
     <div id="tabela">
-        <table id="usuarios">
+        <table id="tabelaUsuarios">
             <thead>
                 <tr>
                     <th>Nome</th>

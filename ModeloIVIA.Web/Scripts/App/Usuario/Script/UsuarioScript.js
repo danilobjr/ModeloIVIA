@@ -1,11 +1,10 @@
 ﻿/// <reference path="../Main/MainScript.js" />
 
-
 ModeloIVIA.Script.Usuario = function UsuarioScript () {
 
-    // Propriedades e Campos
+    // Propriedades
 
-    var _usuarioViewModel = new ModeloIVIA.ViewModel.Usuario();
+    var _viewModel = new ModeloIVIA.ViewModel.Usuario();
 
 };
 
