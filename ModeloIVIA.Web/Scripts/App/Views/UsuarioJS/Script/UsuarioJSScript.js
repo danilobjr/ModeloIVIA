@@ -7,6 +7,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
 
     // Propriedades
 
+    var that = this;
     var _viewModel = new ModeloIVIA.ViewModel.UsuarioJS();
     var _slider = _viewModel.sliderCRUD;
     var _validador = _viewModel.validador;
@@ -16,11 +17,25 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
 
     // Slide
 
-    $("#crudSections a").click(function (e) {
-        var indiceSlide = $(this).attr('data-slide');
+    that.mudarSlide = function (event) {
+        var elemento = $(event.currentTarget);
+        var indiceSlide = elemento.attr('data-slide');
         _slider.irParaSlide(indiceSlide);
         _validador.removerTodos();
-    });
+    };
+
+    $("#crudSections a").click(that.mudarSlide);
+
+
+    // CRUD
+
+    that.obterUsuarioParaAlteracao = function (event) {
+        
+        // Show Loader
+        //_slider.irParaSlide(1);
+    };
+
+    //$('.alteracao').click(that.obterUsuarioParaAlteracao);
 };
 
 

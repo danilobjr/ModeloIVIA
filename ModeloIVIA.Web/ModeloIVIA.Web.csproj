@@ -71,6 +71,9 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Json\JsonViewModel.cs" />
+    <Compile Include="ViewModels\Json\MensagemRetornoJson.cs" />
+    <Compile Include="ViewModels\Json\MensagemRetornoJsonTipo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Style.css" />
@@ -104,16 +107,16 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\App\Componentes\Validador.js" />
     <Content Include="Scripts\App\Main\MainScript.js" />
-    <Content Include="Scripts\App\UsuarioJS\Elementos\ValidadorUsuario.js" />
-    <Content Include="Scripts\App\UsuarioJS\Script\UsuarioJSScript.js" />
-    <Content Include="Scripts\App\UsuarioJS\Elementos\SliderCRUD.js" />
-    <Content Include="Scripts\App\UsuarioJS\Elementos\TabelaGrupos.js" />
-    <Content Include="Scripts\App\UsuarioJS\Elementos\TabelaUsuarios.js" />
-    <Content Include="Scripts\App\UsuarioJS\Elementos\Form.js" />
-    <Content Include="Scripts\App\UsuarioJS\ViewModel\UsuarioJSViewModel.js" />
-    <Content Include="Scripts\App\Usuario\Elementos\TabelaUsuarios.js" />
-    <Content Include="Scripts\App\Usuario\Script\UsuarioScript.js" />
-    <Content Include="Scripts\App\Usuario\ViewModel\UsuarioViewModel.js" />
+    <Content Include="Scripts\App\Views\UsuarioJS\Elementos\ValidadorUsuario.js" />
+    <Content Include="Scripts\App\Views\UsuarioJS\Script\UsuarioJSScript.js" />
+    <Content Include="Scripts\App\Views\UsuarioJS\Elementos\SliderCRUD.js" />
+    <Content Include="Scripts\App\Views\UsuarioJS\Elementos\TabelaGrupos.js" />
+    <Content Include="Scripts\App\Views\UsuarioJS\Elementos\TabelaUsuarios.js" />
+    <Content Include="Scripts\App\Views\UsuarioJS\Elementos\Form.js" />
+    <Content Include="Scripts\App\Views\UsuarioJS\ViewModel\UsuarioJSViewModel.js" />
+    <Content Include="Scripts\App\Views\Usuario\Elementos\TabelaUsuarios.js" />
+    <Content Include="Scripts\App\Views\Usuario\Script\UsuarioScript.js" />
+    <Content Include="Scripts\App\Views\Usuario\ViewModel\UsuarioViewModel.js" />
     <Content Include="Scripts\App\Componentes\DataTables.js" />
     <Content Include="Scripts\App\Componentes\Dialog.js" />
     <Content Include="Scripts\App\Componentes\Slider.js" />
@@ -175,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\App\Servidor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
