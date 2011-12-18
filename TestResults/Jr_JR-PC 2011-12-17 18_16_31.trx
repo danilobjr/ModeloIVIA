@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ed61d514-99dd-4f55-a3b3-a01002534690" name="Jr@JR-PC 2011-12-17 18:16:31" runUser="Jr-PC\Jr" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ea6b27d7-3c5c-46fc-b4b9-12f9220380db">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Jr_JR-PC 2011-12-17 18_16_31">
+      <DeploymentItem filename="C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA\bin\Debug\ModeloIVIA.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-12-17T18:16:31.0412616-03:00" queuing="2011-12-17T18:16:34.5974650-03:00" start="2011-12-17T18:16:34.7014710-03:00" finish="2011-12-17T18:16:35.6075228-03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="VerificaLoginValido" storage="c:\users\jr\documents\jr\projects\ti\vs2010\modeloivia\modeloivia.tests\bin\debug\modeloivia.tests.dll" id="def6811b-8fc3-4545-28b6-d3f2125e66af">
+      <Execution id="30c9ee00-0c16-4dc5-8792-60cf5ac1c32c" />
+      <TestMethod codeBase="C:/Users/Jr/Documents/Jr/Projects/TI/VS2010/ModeloIVIA/ModeloIVIA.Tests/bin/Debug/ModeloIVIA.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ModeloIVIA.Tests.TestaUsuarioLogin, ModeloIVIA.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerificaLoginValido" />
+    </UnitTest>
+    <UnitTest name="VerificaUsuarioEmGrupoAdministrador" storage="c:\users\jr\documents\jr\projects\ti\vs2010\modeloivia\modeloivia.tests\bin\debug\modeloivia.tests.dll" id="2360ba42-e461-6d7a-f9e4-9e8af90d8359">
+      <Execution id="1cc6a127-3118-45bd-ac76-70556c2fc459" />
+      <TestMethod codeBase="C:/Users/Jr/Documents/Jr/Projects/TI/VS2010/ModeloIVIA/ModeloIVIA.Tests/bin/Debug/ModeloIVIA.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ModeloIVIA.Tests.TestaUsuarioGrupo, ModeloIVIA.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerificaUsuarioEmGrupoAdministrador" />
+    </UnitTest>
+    <UnitTest name="VerificaLoginInvalido" storage="c:\users\jr\documents\jr\projects\ti\vs2010\modeloivia\modeloivia.tests\bin\debug\modeloivia.tests.dll" id="3ce1af80-8fd1-b125-5c45-c122c7fd7bfd">
+      <Execution id="4ab10f6c-6726-44a8-8640-0f68abed1a52" />
+      <TestMethod codeBase="C:/Users/Jr/Documents/Jr/Projects/TI/VS2010/ModeloIVIA/ModeloIVIA.Tests/bin/Debug/ModeloIVIA.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ModeloIVIA.Tests.TestaUsuarioLogin, ModeloIVIA.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerificaLoginInvalido" />
+    </UnitTest>
+    <UnitTest name="VerificaUsuarioEmGrupoUsuario" storage="c:\users\jr\documents\jr\projects\ti\vs2010\modeloivia\modeloivia.tests\bin\debug\modeloivia.tests.dll" id="f8a3812b-1a9a-e010-97f7-2121275a92de">
+      <Execution id="c33ae567-6ca4-4ee0-8d87-4777ea8508b6" />
+      <TestMethod codeBase="C:/Users/Jr/Documents/Jr/Projects/TI/VS2010/ModeloIVIA/ModeloIVIA.Tests/bin/Debug/ModeloIVIA.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ModeloIVIA.Tests.TestaUsuarioGrupo, ModeloIVIA.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="VerificaUsuarioEmGrupoUsuario" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="2360ba42-e461-6d7a-f9e4-9e8af90d8359" executionId="1cc6a127-3118-45bd-ac76-70556c2fc459" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ce1af80-8fd1-b125-5c45-c122c7fd7bfd" executionId="4ab10f6c-6726-44a8-8640-0f68abed1a52" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="def6811b-8fc3-4545-28b6-d3f2125e66af" executionId="30c9ee00-0c16-4dc5-8792-60cf5ac1c32c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f8a3812b-1a9a-e010-97f7-2121275a92de" executionId="c33ae567-6ca4-4ee0-8d87-4777ea8508b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="1cc6a127-3118-45bd-ac76-70556c2fc459" testId="2360ba42-e461-6d7a-f9e4-9e8af90d8359" testName="VerificaUsuarioEmGrupoAdministrador" computerName="JR-PC" duration="00:00:00.0157750" startTime="2011-12-17T18:16:34.8834814-03:00" endTime="2011-12-17T18:16:35.4355129-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1cc6a127-3118-45bd-ac76-70556c2fc459">
+    </UnitTestResult>
+    <UnitTestResult executionId="4ab10f6c-6726-44a8-8640-0f68abed1a52" testId="3ce1af80-8fd1-b125-5c45-c122c7fd7bfd" testName="VerificaLoginInvalido" computerName="JR-PC" duration="00:00:00.0013008" startTime="2011-12-17T18:16:35.4375131-03:00" endTime="2011-12-17T18:16:35.4675148-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4ab10f6c-6726-44a8-8640-0f68abed1a52">
+    </UnitTestResult>
+    <UnitTestResult executionId="30c9ee00-0c16-4dc5-8792-60cf5ac1c32c" testId="def6811b-8fc3-4545-28b6-d3f2125e66af" testName="VerificaLoginValido" computerName="JR-PC" duration="00:00:00.0002902" startTime="2011-12-17T18:16:35.4775153-03:00" endTime="2011-12-17T18:16:35.4895160-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="30c9ee00-0c16-4dc5-8792-60cf5ac1c32c">
+    </UnitTestResult>
+    <UnitTestResult executionId="c33ae567-6ca4-4ee0-8d87-4777ea8508b6" testId="f8a3812b-1a9a-e010-97f7-2121275a92de" testName="VerificaUsuarioEmGrupoUsuario" computerName="JR-PC" duration="00:00:00.0002319" startTime="2011-12-17T18:16:35.4915161-03:00" endTime="2011-12-17T18:16:35.4985165-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c33ae567-6ca4-4ee0-8d87-4777ea8508b6">
+    </UnitTestResult>
+  </Results>
+</TestRun>
