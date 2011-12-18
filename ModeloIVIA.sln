@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloIVIA.Web", "ModeloIVIA.Web\ModeloIVIA.Web.csproj", "{34435E54-7024-4D7D-B2EE-A67CE0DE105A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloIVIA.Modelo", "ModeloIVIA.Modelo\ModeloIVIA.Modelo.csproj", "{8A9C98C6-0846-40EB-B6F2-17E13CE1165B}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = ModeloIVIA.vsmdi
@@ -29,6 +31,10 @@ Global
 		{34435E54-7024-4D7D-B2EE-A67CE0DE105A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34435E54-7024-4D7D-B2EE-A67CE0DE105A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34435E54-7024-4D7D-B2EE-A67CE0DE105A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A9C98C6-0846-40EB-B6F2-17E13CE1165B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A9C98C6-0846-40EB-B6F2-17E13CE1165B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A9C98C6-0846-40EB-B6F2-17E13CE1165B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A9C98C6-0846-40EB-B6F2-17E13CE1165B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

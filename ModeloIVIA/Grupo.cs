@@ -10,7 +10,6 @@ namespace ModeloIVIA
         public int Id { get; set; }
         public string Nome { get; set; }
 
-        public int IdPerfil { get; set; }
         public Perfil Perfil { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿/// <reference path="../../Main/MainScript.js" />
+﻿/// <reference path="../../Main/Namespace.js" />
 
 ModeloIVIA.Elemento.TabelaGrupos = function TabelaGrupos(idTabela) {
 

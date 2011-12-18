@@ -1,4 +1,4 @@
-﻿/// <reference path="../Main/MainScript.js" />
+﻿/// <reference path="../Main/Namespace.js" />
 /// <reference path="../../jquery-1.5.1-vsdoc.js" />
 /// <reference path="../../Plugins/ezSlider/jquery.ezSlider.js" />
 

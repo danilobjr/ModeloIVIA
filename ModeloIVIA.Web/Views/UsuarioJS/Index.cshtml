@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ModeloIVIA.Usuario>
+﻿@model ModeloIVIA.Web.ViewModels.UsuarioJS.IndexViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -35,12 +35,15 @@
 <br clear="all" />
 
 <div id="crud">    
-    <div id="form">
-        @using(Html.BeginForm("Index", "UsuarioJS")) {
+    <div>
+        @using (Html.BeginForm("Index", "UsuarioJS", FormMethod.Post, new { @id = "formUsuario" }))
+        {
             <section>
                 <header>
                     <h1>Dados iniciais</h1>
                 </header>
+
+                <input type="hidden" name="Id" />
 
                 <div class="campo">
                     <label>Nome</label>
@@ -54,16 +57,26 @@
                     <input type="text" name="Email" tipvalidation="required-email" />
                 </div>
 
+                <br clear="all" />
+
                 <div class="campo">
                     <label>Login</label>
                     <br />
                     <input type="text" name="Login" tipvalidation="required" />
                 </div>
 
-                @*<div>
+                <div>
                     <label>Grupos</label>
-                    <input type="text" name="Login" />
-                </div>*@
+                    <br />
+                    <select name="Grupos">
+                        <option>Selecione</option>
+
+                        @foreach (var grupo in Model.Grupos)
+                        {
+                            <option value="@grupo.Id">@grupo.Nome</option>
+                        }
+                    </select>
+                </div>
             </section>
 
             <br clear="all" />
@@ -110,13 +123,27 @@
                 <div class="campo">
                     <label>Estado</label>
                     <br />
-                    <select name="Estado"></select>
+                    <select name="Estado">
+                        <option>Selecione</option>
+
+                        @foreach (var estado in Model.Estados)
+                        {
+                            <option value="@estado.Id">@estado.Descricao</option>
+                        }
+                    </select>
                 </div>
             </section>
+            
+            <br clear="all" />
+            
+            <div class="botoes">
+                <button id="salvar">Salvar</button>
+                <button id="limparForm">Cancelar</button>
+            </div>
         }
     </div>
 
-    <div id="tabela">
+    <div>
         <table id="tabelaUsuarios">
             <thead>
                 <tr>
@@ -129,7 +156,7 @@
             </thead>
             <tbody>
 
-                @foreach (var usuario in Model)
+                @foreach (var usuario in Model.Usuarios)
                 {
                     <tr>
                         <td>@usuario.Nome</td>

@@ -71,9 +71,12 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Mapeador.cs" />
     <Compile Include="ViewModels\Json\JsonViewModel.cs" />
     <Compile Include="ViewModels\Json\MensagemRetornoJson.cs" />
     <Compile Include="ViewModels\Json\MensagemRetornoJsonTipo.cs" />
+    <Compile Include="ViewModels\UsuarioJS\IndexViewModel.cs" />
+    <Compile Include="ViewModels\UsuarioJS\SalvarViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Style.css" />
@@ -105,8 +108,12 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\App\Componentes\Botao.js" />
     <Content Include="Scripts\App\Componentes\Validador.js" />
+    <Content Include="Scripts\App\Main\Namespace.js" />
+    <Content Include="Scripts\App\Main\MainViewModel.js" />
     <Content Include="Scripts\App\Main\MainScript.js" />
+    <Content Include="Scripts\App\Servidor\Servidor.js" />
     <Content Include="Scripts\App\Views\UsuarioJS\Elementos\ValidadorUsuario.js" />
     <Content Include="Scripts\App\Views\UsuarioJS\Script\UsuarioJSScript.js" />
     <Content Include="Scripts\App\Views\UsuarioJS\Elementos\SliderCRUD.js" />
@@ -178,7 +185,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\App\Servidor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

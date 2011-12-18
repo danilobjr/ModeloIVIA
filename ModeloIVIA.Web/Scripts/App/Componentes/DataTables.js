@@ -1,4 +1,5 @@
-﻿/// <reference path="../App/Main/MainScript.js" />
+﻿/// <reference path="../Main/Namespace.js" />
+
 
 ModeloIVIA.Componente.DataTables = function DataTables(idTabela) {
 
