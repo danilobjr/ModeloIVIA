@@ -1,6 +1,7 @@
 ﻿/// <reference path="../../Main/MainScript.js" />
 /// <reference path="../ViewModel/UsuarioJSViewModel.js" />
 /// <reference path="../Elementos/SliderCRUD.js" />
+/// <reference path="../../../Servidor/Servidor.js" />
 
 
 ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
@@ -8,6 +9,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     // Propriedades
 
     var that = this;
+    var _servidor = new ModeloIVIA.Servidor();
     var _viewModel = new ModeloIVIA.ViewModel.UsuarioJS();
     var _slider = _viewModel.sliderCRUD;
     var _validador = _viewModel.validador;
@@ -30,12 +32,13 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     // CRUD
 
     that.obterUsuarioParaAlteracao = function (event) {
-        
+        var elemento = $(event.currentTarget);
+        // TODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
         // Show Loader
-        //_slider.irParaSlide(1);
+        _slider.irParaSlide(1);
     };
 
-    //$('.alteracao').click(that.obterUsuarioParaAlteracao);
+    $('.alteracao').click(that.obterUsuarioParaAlteracao);
 };
 
 

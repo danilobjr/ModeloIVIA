@@ -34,8 +34,8 @@ namespace ModeloIVIA.Web.Controllers
         [HttpPost]
         public JsonResult ObterUsuarioParaAlteracao(int idUsuario)
         {
-            try
-            {
+            //try
+            //{
                 var usuario = _usuarioServico.ObterUsuario(idUsuario);
 
                 if (usuario != null)
@@ -50,20 +50,20 @@ namespace ModeloIVIA.Web.Controllers
                 {
                     throw new Exception("Usuário não encontrado.");
                 }
-            }
-            catch (Exception e) 
-            {
-                return Json(new JsonViewModel
-                {
-                    Sucesso = false,
-                    Mensagem = new MensagemRetornoJson
-                    {
-                        Titulo = MensagemRetornoJsonTipo.Erro,
-                        Corpo = MensagemRetornoJson.ErroUsuarioJSObterUsuarioParaAlteracao,
-                        Excecao = e
-                    }
-                });
-            }
+            //}
+            //catch (Exception e) 
+            //{
+            //    return Json(new JsonViewModel
+            //    {
+            //        Sucesso = false,
+            //        Mensagem = new MensagemRetornoJson
+            //        {
+            //            Titulo = MensagemRetornoJsonTipo.Erro,
+            //            Corpo = MensagemRetornoJson.ErroUsuarioJSObterUsuarioParaAlteracao,
+            //            Excecao = e
+            //        }
+            //    });
+            //}
         }
     }
 }
