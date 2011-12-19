@@ -133,7 +133,11 @@ table.display thead th div.DataTables_sort_wrapper span {
 }
 
 .dataTables_filter {
-	width: 50%;
+	/*width: 50%;*/
+	
+	/* CUSTOM */
+	width: 45%;
+	
 	float: right;
 	text-align: right;
 }

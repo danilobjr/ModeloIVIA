@@ -40,9 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cidade.cs" />
+    <Compile Include="CidadeRepositorio.cs" />
+    <Compile Include="CidadeServico.cs" />
+    <Compile Include="Endereco.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="EstadoRepositorio.cs" />
+    <Compile Include="EstadoServico.cs" />
     <Compile Include="Funcionalidade.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="GrupoRepositorio.cs" />
+    <Compile Include="GrupoServico.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioRepositorio.cs" />

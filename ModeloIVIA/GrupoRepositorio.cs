@@ -32,7 +32,6 @@ namespace ModeloIVIA
                 {
                     Id = id,
                     Nome = String.Format("Grupo {0}", id),
-                    IdPerfil = (perfil == Perfil.Administrador) ? 1 : (perfil == Perfil.Chefe) ? 2 : 3,
                     Perfil = perfil
                 });
             }

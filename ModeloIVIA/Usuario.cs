@@ -14,6 +14,5 @@ namespace ModeloIVIA
         public string Email { get; set; }
 
         public Grupo Grupo { get; set; }
-        public int IdGrupo { get; set; }
     }
 }

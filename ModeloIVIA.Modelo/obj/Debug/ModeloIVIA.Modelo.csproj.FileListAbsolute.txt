@@ -1,0 +1,5 @@
+C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA.Modelo\bin\Debug\ModeloIVIA.Modelo.dll
+C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA.Modelo\bin\Debug\ModeloIVIA.Modelo.pdb
+C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA.Modelo\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA.Modelo\obj\Debug\ModeloIVIA.Modelo.dll
+C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA.Modelo\obj\Debug\ModeloIVIA.Modelo.pdb

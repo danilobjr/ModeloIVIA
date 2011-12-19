@@ -1,0 +1,130 @@
+.tipvalidation
+{    
+    position: absolute;
+    cursor: pointer;
+    opacity: 0.9;
+}
+  
+.tipvalidation-wrapper
+{    
+    border: 1px solid #c20d02;
+        
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    
+    box-shadow: 2px 2px 6px black;
+    -webkit-box-shadow: 2px 2px 6px black;
+    -moz-box-shadow: 2px 2px 6px black;    
+}
+  
+.tipvalidation-content-borders
+{
+    position: relative;
+    
+    border-top: 1px solid #ff5a53;
+    border-right: 1px solid #eb190c;
+    border-bottom: 1px solid #c90300;
+    border-left: 1px solid #f85a51;
+    
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+  
+.tipvalidation-content {  
+    position: relative;
+    
+    padding: 8px 10px 10px 10px;
+    min-width: 120px;
+    
+    text-align: center;
+    color: white;    
+    font-family: arial;
+    font-weight: normal;
+    font-size: 13px;
+    
+    border-radius: 1px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    
+    text-shadow: 0 1px #f85a51;
+    -webkit-text-shadow: 0 1px #f85a51;
+    -moz-text-shadow: 0 1px #f85a51;
+    
+    background-image: -webkit-gradient(
+        linear, left top, left bottom, 
+        From(#ee1b06), To(#d50302)); 
+    background-image: -moz-linear-gradient(-90deg, #ee1b06, #d50302);
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#ee1b06', EndColorStr='#d50302');
+}
+  
+.tipvalidation-arrow-centerRight {
+    position: absolute;
+    margin-left: -22px;
+    
+    border-width: 12px;
+    border-style: solid;    
+    border-color: transparent #dd1b06 transparent transparent;
+}
+  
+.tipvalidation-arrow-topRight {
+    position: absolute;
+    margin-left: 10px;
+    
+    border-width: 12px;
+    border-style: solid;    
+    border-color: #d50302 transparent transparent transparent;    
+}
+  
+.tipvalidation-arrow-bottomRight {
+    position: absolute;
+    margin-left: 10px;
+    
+    border-width: 12px;
+    border-style: solid;    
+    border-color: transparent transparent #ee1b06 transparent;    
+}
+  
+.tipvalidation-arrow-topCenter {
+    position: absolute;
+    
+    border-width: 12px;
+    border-style: solid;    
+    border-color: #d50302 transparent transparent transparent;    
+}
+  
+.tipvalidation-arrow-bottomCenter {
+    position: absolute;
+    
+    border-width: 12px;
+    border-style: solid;    
+    border-color: transparent transparent #ee1b06 transparent;    
+}
+  
+.tipvalidation-arrow-topLeft {
+    position: absolute;
+    right: 10px;
+    
+    border-width: 12px;
+    border-style: solid;    
+    border-color: #d50302 transparent transparent transparent;    
+}
+  
+.tipvalidation-arrow-bottomLeft {
+    position: absolute;
+    right: 10px;
+    
+    border-width: 12px;
+    border-style: solid;    
+    border-color: transparent transparent #ee1b06 transparent;       
+}
+  
+.tipvalidation-arrow-centerLeft {
+    position: absolute;
+    right: -22px;
+    
+    border-width: 12px;
+    border-style: solid;    
+    border-color: transparent transparent transparent #dd1b06;
+}
