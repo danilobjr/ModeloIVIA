@@ -13,6 +13,8 @@ namespace ModeloIVIA
         public string Senha { get; set; }
         public string Email { get; set; }
 
+        public Endereco Endereco { get; set; }
+
         public Grupo Grupo { get; set; }
     }
 }
