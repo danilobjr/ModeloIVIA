@@ -11,13 +11,22 @@ nav#crudSections a
 {
     float: left;
     display: block;
-    margin-right: 30px;
+    margin-right: 5px;
+    padding: 2px 15px;
+    background-color: #F0F0F0;
+    border-radius: 4px 4px 0 0;
 }
 
 nav#crudSections a:hover
 {
     color: Black;
     cursor: pointer;
+    background-color: gainsboro;
+}
+
+nav#crudSections a:selected
+{
+    background-color: red;
 }
 
 
@@ -25,6 +34,16 @@ nav#crudSections a:hover
 
 #crud
 {
-    margin-top: 30px;
+    margin-top: 0;
+    padding: 10px;
+    /*background-color: #F0F0F0;*/
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEE), color-stop(100%,#CCC));*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#eeeeee), color-stop(100%,#d8d8d8));
+    border: 1px solid gainsboro;
+    border-radius: 0 4px 4px 4px;
 }
 
+.tab-ativa
+{
+    background-color: gainsboro !important; 
+}

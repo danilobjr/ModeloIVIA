@@ -24,6 +24,8 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
 
     that.mudarSlide = function (event) {
         var elemento = $(event.currentTarget);
+        //elemento.siblings().removeClass('tab-ativa');
+        //elemento.addClass('tab-ativa');
         var indiceSlide = elemento.attr('data-slide');
         that.slider.irParaSlide(indiceSlide);
         that.validador.removerTodos();
