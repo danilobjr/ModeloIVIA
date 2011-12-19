@@ -3,3 +3,8 @@ C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA\bin\Debug\Mode
 C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA\obj\Debug\ModeloIVIA.dll
 C:\Users\Jr\Documents\Jr\Projects\TI\VS2010\ModeloIVIA\ModeloIVIA\obj\Debug\ModeloIVIA.pdb
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA\bin\Debug\ModeloIVIA.dll
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA\bin\Debug\ModeloIVIA.pdb
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA\obj\Debug\ModeloIVIA.dll
+C:\Users\jdanilopbj\Documents\Danilo\Projetos_WEB\dotNet\ModeloIVIA\ModeloIVIA\obj\Debug\ModeloIVIA.pdb
