@@ -25,7 +25,21 @@ ModeloIVIA.Componente.DataTables = function DataTables(idTabela) {
         "bJQueryUI": true,
         "sPaginationType": "full_numbers",
 
+        // Comportamento
+
+        //"sDom": 'R<"H"lfr>t<"F"ip<',
+        //"sDom": 'RC<"clear">lfrtip',
+        "sDom": 'T<"clear">R<"H"lCfr>t<"F"ip>',
+
         // Internacionalização
+        "oColVis": {
+			"buttonText": "Colunas"
+        },
+
+        "oTableTools": {
+            "aButtons": ["pdf", "xls"],
+            "sSwfPath": "/Scripts/Plugins/DataTables_TableTools/swf/copy_cvs_xls_pdf.swf"
+        },
 
         "oLanguage": {
             "sLengthMenu": "Mostrar _MENU_ registros",
