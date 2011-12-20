@@ -2,14 +2,15 @@
 /// <reference path="../../jquery-1.5.1-vsdoc.js" />
 /// <reference path="../../Plugins/ezSlider/jquery.ezSlider.js" />
 
-ModeloIVIA.Componente.Slider = function Slider(idContainer) {
+ModeloIVIA.Componente.Slider = function Slider(idContainer, options) {
 
     /// <summary>
     /// Configura um container como um Slider. 
     /// &#10;Os elementos filhos deste container serão os slides.    
     /// </summary>
-    /// <param name="idContainer" type="String">
-    /// Id do elemento container com elementos filhos.
+    /// <param name="idContainer" type="String">Id do elemento container com elementos filhos.</param>
+    /// <param name="options" type="json">
+    /// Objeto com as opções do usuário para a customização do comportamento do plugin.
     /// </param>
 
 
@@ -22,7 +23,7 @@ ModeloIVIA.Componente.Slider = function Slider(idContainer) {
     // Construtor
 
     if (idContainer) {
-        this.slider = $(_idContainer).ezSlider();
+        this.slider = $(_idContainer).ezSlider(options);
     }
 
 };

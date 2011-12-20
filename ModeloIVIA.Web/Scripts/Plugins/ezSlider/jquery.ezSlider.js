@@ -10,7 +10,8 @@
         defaults: {
             containerClass: 'ezslider',
             wrapperClass: 'ezslider-wrapper',
-            slideClass: 'ezslider-slide'
+            slideClass: 'ezslider-slide',
+            childrenPadding: undefined
         }
     };
 
@@ -91,7 +92,8 @@
 
         $(slides).css({
             float: 'left',
-            width: config.width
+            padding: config.childrenPadding,
+            width: (config.childrenPadding) ? config.width - (2 * config.childrenPadding) : config.childrenPadding
         })
             .addClass(config.slideClass)
             .appendTo(wrapper);

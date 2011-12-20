@@ -127,17 +127,23 @@
     <Content Include="Scripts\App\Componentes\DataTables.js" />
     <Content Include="Scripts\App\Componentes\Dialog.js" />
     <Content Include="Scripts\App\Componentes\Slider.js" />
+<<<<<<< HEAD
     <Content Include="Scripts\Plugins\DataTables_ColReorder\ColReorder.min.js" />
     <Content Include="Scripts\Plugins\DataTables_ColVis\ColVis.min.js" />
     <Content Include="Scripts\Plugins\DataTables_ColReorder\css\ColReorder.css" />
     <Content Include="Scripts\Plugins\DataTables_ColVis\css\ColVis.css" />
+=======
+>>>>>>> c03d5b49b975016515f87b7ae3649f2a05a5e064
     <Content Include="Scripts\Plugins\DataTables\css\demo_table_jui.css" />
     <Content Include="Scripts\Plugins\DataTables\images\back_disabled.jpg" />
     <Content Include="Scripts\Plugins\DataTables\images\back_enabled.jpg" />
     <Content Include="Scripts\Plugins\DataTables\images\favicon.ico" />
     <Content Include="Scripts\Plugins\DataTables\images\forward_disabled.jpg" />
     <Content Include="Scripts\Plugins\DataTables\images\forward_enabled.jpg" />
+<<<<<<< HEAD
     <Content Include="Scripts\Plugins\DataTables_ColReorder\images\insert.png" />
+=======
+>>>>>>> c03d5b49b975016515f87b7ae3649f2a05a5e064
     <Content Include="Scripts\Plugins\DataTables\images\sort_asc.png" />
     <Content Include="Scripts\Plugins\DataTables\images\sort_asc_disabled.png" />
     <Content Include="Scripts\Plugins\DataTables\images\sort_both.png" />
@@ -154,6 +160,14 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+<<<<<<< HEAD
+=======
+    <Content Include="Scripts\Plugins\DataTables_ColReorder\ColReorder.min.js" />
+    <Content Include="Scripts\Plugins\DataTables_ColReorder\css\ColReorder.css" />
+    <Content Include="Scripts\Plugins\DataTables_ColReorder\images\insert.png" />
+    <Content Include="Scripts\Plugins\DataTables_ColVis\ColVis.min.js" />
+    <Content Include="Scripts\Plugins\DataTables_ColVis\css\ColVis.css" />
+>>>>>>> c03d5b49b975016515f87b7ae3649f2a05a5e064
     <Content Include="Scripts\Plugins\DataTables_TableTools\css\TableTools.css" />
     <Content Include="Scripts\Plugins\DataTables_TableTools\images\background.png" />
     <Content Include="Scripts\Plugins\DataTables_TableTools\images\collection.png" />

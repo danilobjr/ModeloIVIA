@@ -44,6 +44,8 @@
     <Compile Include="CidadeRepositorio.cs" />
     <Compile Include="CidadeServico.cs" />
     <Compile Include="Endereco.cs" />
+    <Compile Include="EnderecoRepositorio.cs" />
+    <Compile Include="EnderecoServico.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="EstadoRepositorio.cs" />
     <Compile Include="EstadoServico.cs" />

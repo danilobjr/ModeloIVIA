@@ -4,7 +4,8 @@ to use a different color start by replacing all instances of
 #5c87b2 with your new color.
 ----------------------------------------------------------*/
 body {
-    background-color: #5c87b2;
+    /*background-color: #5c87b2;*/
+    background-color: White;
     font-size: .85em;
     font-family: "Open Sans", "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     margin: 0;
@@ -46,7 +47,7 @@ section {
 ----------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 
 {
-    font-family: "Open Sans";/*Raleway;*/
+    font-family: Raleway;/*Open Sans;*/
     font-size: 1.5em;
     color: #000;
 }
@@ -79,16 +80,35 @@ h5, h6 {
 /* you can specify a greater or lesser percentage for the 
 page width. Or, you can specify an exact pixel width. */
 .page {
-    width: 90%;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
 }
 
-header, #header {
+header, #header 
+{
     position: relative;
     margin-bottom: 0px;
     color: #000;
     padding: 0;
+}
+
+.page > header
+{
+    margin: 40px 0 20px 0;
+    padding: 20px 15px;
+    height: 38px;
+    
+    line-height: 1em;
+    border: 1px solid black;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(96,108,136,1)), color-stop(100%,rgba(63,76,107,1)));
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px gray;
+}
+
+section > header h1
+{
+    font-size: 24px !important;
 }
 
 header h1, #header h1 {
@@ -104,11 +124,22 @@ header h1, #header h1 {
 
 #main {
     /*padding: 30px 30px 15px 30px;*/
-    padding: 50px;
+    padding: 20px;
     background-color: #fff;
     border-radius: 4px 0 0 0;
     -webkit-border-radius: 4px 0 0 0;
     -moz-border-radius: 4px 0 0 0;
+}
+
+#main > header
+{
+    margin-bottom: 20px;
+}
+
+#main > header h1
+{
+    font-size: 38px !important;
+    margin-top: -20px;
 }
 
 footer, 
@@ -128,7 +159,7 @@ footer,
 /* TAB MENU   
 ----------------------------------------------------------*/
 ul#menu {
-    border-bottom: 1px #5C87B2 solid;
+    /*border-bottom: 1px #5C87B2 solid;*/
     padding: 0 0 2px;
     position: relative;
     margin: 0;
@@ -153,25 +184,26 @@ ul#menu li a {
     font-weight: bold;
     text-decoration: none;
     line-height: 2.8em;
-    background-color: #e8eef4;
-    color: #034af3;
-    border-radius: 4px 4px 0 0;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
+    /*background-color: #e8eef4;*/
+    color: gainsboro;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
 }
 
 ul#menu li a:hover {
-    background-color: #fff;
+    background-color: #cccccc;/*#606C88;*/
+    color: Gray;
     text-decoration: none;
 }
 
 ul#menu li a:active {
-    background-color: #a6e2a6;
-    text-decoration: none;
+    /*background-color: #a6e2a6;*/
+    text-decoration: none;#main
+    
 }
 
 ul#menu li.selected a {
-    background-color: #fff;
+    /*background-color: #fff;*/
     color: #000;
 }
 
@@ -252,12 +284,26 @@ table th {
 
 nav, 
 #menucontainer {
-    margin-top: 40px;
+    /*margin-top: 40px;*/
+}
+
+.page header nav
+{
+    float: right;
+}
+
+.page > header h1
+{
+    padding: 0;
+    color: gainsboro;
+    line-height: 1em;
+    font-size: 42px !important;
 }
 
 div#title {
     display: block;
     float: left;
+    margin: -2px 5px;
     text-align: left;
 }
 
@@ -346,6 +392,6 @@ div#title {
 .botoes
 {
     padding-top: 12px;
-    border-top: 1px solid #CCC;
+    border-top: 1px solid #EEE;
     margin-top: 30px;
 }

@@ -3,6 +3,7 @@
 /// <reference path="../Elementos/SliderCRUD.js" />
 /// <reference path="../../../Servidor/Servidor.js" />
 /// <reference path="../Elementos/Form.js" />
+/// <reference path="../../../../jquery-1.5.1-vsdoc.js" />
 
 
 ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
@@ -23,6 +24,8 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
 
     that.mudarSlide = function (event) {
         var elemento = $(event.currentTarget);
+        //elemento.siblings().removeClass('tab-ativa');
+        //elemento.addClass('tab-ativa');
         var indiceSlide = elemento.attr('data-slide');
         that.slider.irParaSlide(indiceSlide);
         that.validador.removerTodos();
@@ -59,13 +62,18 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
         var elemento = $(event.currentTarget);
         var idEstado = elemento.children(':selected').val();
         var parametros = "idEstado=" + idEstado;
+
         ModeloIVIA.Servidor.ajax({
             url: "/UsuarioJS/ObterCidadesPorEstado",
             parametros: parametros,
             successCallback: function (resultado) {
-                $('select[name=Cidade]').append(new Option('Selecione'));
+                var dropDown = $('select[name=Cidade]');
+
+                dropDown.children().remove();
+                dropDown.append(new Option('Selecione'));
+
                 $.each(resultado.Dados, function (cont, cidade) {
-                    $('select[name=Cidade]').append(new Option(cidade.Descricao, cidade.Id));
+                    dropDown.append(new Option(cidade.Descricao, cidade.Id));
                 });
             }
         });

@@ -28,7 +28,7 @@
 </header>
 
 <nav id="crudSections">
-    <a data-slide="1">Form</a>
+    <a data-slide="1" class="tab-ativa">Form</a>
     <a data-slide="2">Lista</a>
 </nav>
 
@@ -68,7 +68,7 @@
                 <div>
                     <label>Grupos</label>
                     <br />
-                    <select name="Grupos">
+                    <select name="Grupo">
                         <option>Selecione</option>
 
                         @foreach (var grupo in Model.Grupos)

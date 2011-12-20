@@ -13,6 +13,7 @@ ModeloIVIA.Elemento.Form = function Form() {
     this.nome = $('input[name=Nome]');
     this.email = $('input[name=Email]');
     this.login = $('input[name=Login]');
+    this.grupo = $('select[name=Grupo]');
 
     this.logradouro = $('input[name=Logradouro]');
     this.numero = $('input[name=Numero]');
@@ -38,6 +39,8 @@ ModeloIVIA.Elemento.Form.prototype = {
         this.nome.val(dados.Nome);
         this.email.val(dados.Email);
         this.login.val(dados.Login);
+        this.grupo.children().removeAttr('selected');
+        this.grupo.children('[value=' + dados.Grupo.Id + ']').attr('selected', true);
 
         this.logradouro.val(dados.Logradouro);
         this.numero.val(dados.Numero);
@@ -55,7 +58,7 @@ ModeloIVIA.Elemento.Form.prototype = {
         this.form
             .find('input[type=text], input[type=hidden]').val('').end()
             .find('select').children().removeAttr('selected');
-    }//,
+    } //,
     //obterCidadesPorEstado: function (idEstado) {
     //}
 };
