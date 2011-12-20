@@ -17,6 +17,7 @@ namespace ModeloIVIA
         private void CriarUsuarios()
         {
             var usuarios = new List<Usuario>();
+            var enderecoRepositorio = new EnderecoRepositorio();
 
             for (int cont = 0; cont < 25; cont++)
             {
@@ -29,6 +30,7 @@ namespace ModeloIVIA
                     Email = String.Format("usuario{0}@email.com", id),
                     Login = String.Format("usuario{0}", id),
                     Senha = "123456",
+                    Endereco = (cont % 2 == 0) ? enderecoRepositorio.ObterTodos().ElementAt(0) : enderecoRepositorio.ObterTodos().ElementAt(1),
                     Grupo = new GrupoRepositorio().ObterPorIdUsuario(id)
                 });
             }

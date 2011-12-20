@@ -83,13 +83,14 @@ namespace ModeloIVIA.Web.Controllers
             try
             {
                 var usuario = _usuarioServico.ObterUsuario(idUsuario);
+                var cidadesDoEstado = _cidadeServico.ObterCidadesPorEstado(usuario.Endereco.Cidade.IdEstado);
 
                 if (usuario != null)
                 {
                     return Json(new JsonViewModel
                     {
                         Sucesso = true,
-                        Dados = usuario
+                        Dados = new { Usuario = usuario, Cidades = cidadesDoEstado }
                     });
                 }
                 else

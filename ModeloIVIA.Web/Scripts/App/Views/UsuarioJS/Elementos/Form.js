@@ -34,21 +34,25 @@ ModeloIVIA.Elemento.Form.prototype = {
         /// <param name="dados" type="json">Objeto contendo os valores de cada campo.</param>
         /// <returns type="void" />
 
-        this.idUsuario.val(dados.Id);
+        this.limpar();
 
-        this.nome.val(dados.Nome);
-        this.email.val(dados.Email);
-        this.login.val(dados.Login);
+        this.idUsuario.val(dados.Usuario.Id);
+
+        this.nome.val(dados.Usuario.Nome);
+        this.email.val(dados.Usuario.Email);
+        this.login.val(dados.Usuario.Login);
         this.grupo.children().removeAttr('selected');
-        this.grupo.children('[value=' + dados.Grupo.Id + ']').attr('selected', true);
+        this.grupo.children('[value=' + dados.Usuario.Grupo.Id + ']').attr('selected', true);
 
-        this.logradouro.val(dados.Logradouro);
-        this.numero.val(dados.Numero);
-        this.bairro.val(dados.Bairro);
-        this.complemento.val(dados.Complemento);
+        this.logradouro.val(dados.Usuario.Endereco.Logradouro);
+        this.numero.val(dados.Usuario.Endereco.Numero);
+        this.bairro.val(dados.Usuario.Endereco.Bairro);
+        this.complemento.val(dados.Usuario.Endereco.Complemento);
 
-        this.cidade.val(dados.Cidade);
-        this.estado.val(dados.Estado);
+        this.estado.children('[value=' + dados.Usuario.Endereco.Cidade.IdEstado + ']').attr('selected', true);
+        
+        this.preencherCidades(dados.Cidades);
+        this.cidade.children('[value=' + dados.Usuario.Endereco.Cidade.Id + ']').attr('selected', true);
     },
     limpar: function () {
 
@@ -58,7 +62,13 @@ ModeloIVIA.Elemento.Form.prototype = {
         this.form
             .find('input[type=text], input[type=hidden]').val('').end()
             .find('select').children().removeAttr('selected');
-    } //,
-    //obterCidadesPorEstado: function (idEstado) {
-    //}
+    },
+    preencherCidades: function (cidades) {
+
+        var dropDownCidade = this.cidade.append(new Option('Selecione'));
+
+        $.each(cidades, function (i, cidade) {
+            dropDownCidade.append(new Option(cidade.Descricao, cidade.Id));
+        });
+    }
 };

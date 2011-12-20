@@ -9,7 +9,7 @@ namespace ModeloIVIA
     {
         #region Propriedades
 
-        public List<Endereco> Enderecos { get; set; }
+        private List<Endereco> Enderecos { get; set; }
 
         #endregion
 
