@@ -8,16 +8,27 @@ namespace ModeloIVIA.Web.Util
 {
     public class Mapeador
     {
-        public static Usuario ParaUsuario(SalvarViewModel viewModel)
+        public static Usuario ParaUsuario(SalvarUsuarioViewModel viewModel)
         {
+            var idGrupo = viewModel.Grupo;
+            var idCidade = viewModel.Cidade;
+
             return new Usuario
             {
                 Id = viewModel.Id,
                 Nome = viewModel.Nome,
                 Email = viewModel.Email,
                 Login = viewModel.Login,
-                //Senha = (viewModel.Id == 0) ? String.Format("ivia#{0}", DateTime.Now.Year) 
-                Grupo = viewModel.Grupo
+                Grupo = new GrupoServico().Obter(idGrupo),
+                Endereco = new Endereco
+                {
+                    Logradouro = viewModel.Logradouro,
+                    Numero = viewModel.Numero,
+                    Bairro = viewModel.Bairro,
+                    Complemento = viewModel.Complemento,
+                    //CEP = viewModel.Cp
+                    Cidade = new CidadeServico().Obter(idCidade)
+                }
             };
         }
     }

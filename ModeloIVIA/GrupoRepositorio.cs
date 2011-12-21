@@ -7,7 +7,7 @@ namespace ModeloIVIA
 {
     public class GrupoRepositorio
     {
-        public List<Grupo> Grupos { get; set; }
+        private List<Grupo> Grupos { get; set; }
 
         public GrupoRepositorio()
         {
@@ -52,6 +52,11 @@ namespace ModeloIVIA
                 grupoDoUsuario = Grupos.First();
 
             return grupoDoUsuario;
+        }
+
+        internal Grupo Obter(int idGrupo)
+        {
+            return Grupos.FirstOrDefault(g => g.Id == idGrupo);
         }
     }
 }

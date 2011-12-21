@@ -80,6 +80,31 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     };
 
     $('select[name=Estado]').change(that.obterCidadesPorEstado);
+
+    that.salvarUsuario = function (event) {
+        event.preventDefault();
+        // TODO - validação
+
+        var atualizarTabelaUsuarios = function (usuarios) {
+
+            listaUsuarios = [];
+
+            $.each(usuarios, function (i, usuario) {
+                listaUsuarios.push([
+                    usuario.Nome,
+                    usuario.Email,
+                    usuario.Grupo.Nome,
+                    usuario.Grupo.Perfil,
+                    "<a class='alterar' href='/UsuarioJS/ObterUsuarioParaAlteracao?idUsuario='"+ usuario.Id +">alterar</a>"
+                ]);
+            });
+
+            that.tabelaUsuarios.adicionarLinhas(listaUsuarios);
+        };
+        that.form.salvarUsuario(atualizarTabelaUsuarios);
+    };
+
+    $('#salvar').click(that.salvarUsuario);
 };
 
 

@@ -2,16 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 namespace ModeloIVIA
 {
     public class UsuarioRepositorio
     {
-        private List<Usuario> Usuarios { get; set; }
+        private List<Usuario> Usuarios 
+        {
+            get
+            {
+                return (List<Usuario>)HttpContext.Current.Session["Usuarios"];
+            }
+            set
+            {
+                HttpContext.Current.Session["Usuarios"] = value;
+            }
+        }
 
         public UsuarioRepositorio()
         {
-            CriarUsuarios();
+            if (Usuarios == null)
+            {
+                CriarUsuarios();
+            }
         }
 
         private void CriarUsuarios()
@@ -41,6 +55,22 @@ namespace ModeloIVIA
         internal List<Usuario> ObterTodos()
         {
             return Usuarios;
+        }
+
+        internal void SalvarNovo(Usuario usuario)
+        {
+            Usuarios.Add(usuario);
+        }
+
+        internal Usuario Obter(int idUsuario)
+        {
+            return Usuarios.FirstOrDefault(u => u.Id == idUsuario);
+        }
+
+        internal void SalvarAlteracao(Usuario usuarioOriginal)
+        {
+            Usuarios.RemoveAll(u => u.Id == usuarioOriginal.Id);
+            Usuarios.Add(usuarioOriginal);
         }
     }
 }

@@ -26,5 +26,10 @@ namespace ModeloIVIA
         {
             return _grupoRepositorio.ObterTodos();
         }
+
+        public Grupo Obter(int idGrupo)
+        {
+            return _grupoRepositorio.Obter(idGrupo);
+        }
     }
 }

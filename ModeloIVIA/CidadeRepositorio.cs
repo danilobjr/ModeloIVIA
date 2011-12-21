@@ -34,5 +34,10 @@ namespace ModeloIVIA
         {
             return Cidades.Where(c => c.IdEstado == idEstado);
         }
+
+        internal Cidade Obter(int idCidade)
+        {
+            return Cidades.FirstOrDefault(c => c.Id == idCidade);
+        }
     }
 }

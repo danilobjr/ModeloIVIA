@@ -2,54 +2,54 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 namespace ModeloIVIA
 {
     public class UsuarioServico
     {
-        // TODO: deve ficar no repositório
-        private List<Usuario> listaUsuarios;
-        
-        /// <summary>
-        /// Recebe lista de usuários como parâmetros (ficará no repositório)
-        /// </summary>
-        /// <param name="listaUsuarios"></param>
-        public UsuarioServico(List<Usuario> listaUsuarios)
-        {
-            this.listaUsuarios = listaUsuarios;
-        }
+        #region Propriedades e Campos
+
+        private UsuarioRepositorio _usuarioRepositorio;
+
+        #endregion
+
+        #region Construtor
 
         public UsuarioServico()
         {
-            this.listaUsuarios = new UsuarioRepositorio().ObterTodos();
+            _usuarioRepositorio = new UsuarioRepositorio();
         }
 
-        /// <summary>
-        /// Verifica um usuário em uma tentativa de login. Retorna o usuário quando login e senha estiverem corretos. 
-        /// </summary>
-        /// <param name="login"></param>
-        /// <param name="senha"></param>
-        /// <returns></returns>
-        public Usuario ValidarLogin(string login, string senha)
-        {
-            var usuario = (from u in listaUsuarios where u.Login == login && u.Senha == senha select u).FirstOrDefault();
+        #endregion
 
-            return usuario;
-        }
-
-        /// <summary>
-        /// Obtem usuário por id (deve usar o repositório)
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         public Usuario ObterUsuario(int id)
         {
-            return (from u in listaUsuarios where u.Id == id select u).FirstOrDefault();
+            var usuarios = _usuarioRepositorio.ObterTodos();
+            return (from u in usuarios where u.Id == id select u).FirstOrDefault();
         }
 
         public IList<Usuario> ObterTodos()
         {
-            return listaUsuarios;
+            return _usuarioRepositorio.ObterTodos();
+        }
+
+        public void SalvarNovoUsuario(Usuario usuario)
+        {
+            _usuarioRepositorio.SalvarNovo(usuario);
+        }
+
+        public void SalvarAlteracaoUsuario(Usuario usuarioAlterado)
+        {
+            Usuario usuarioOriginal = _usuarioRepositorio.Obter(usuarioAlterado.Id);
+
+            usuarioOriginal.Nome = usuarioAlterado.Nome;
+            usuarioOriginal.Login = usuarioAlterado.Login;
+            usuarioOriginal.Email = usuarioAlterado.Email;
+            usuarioOriginal.Endereco = usuarioAlterado.Endereco;
+            usuarioOriginal.Grupo = usuarioAlterado.Grupo;
+
+            _usuarioRepositorio.SalvarAlteracao(usuarioOriginal);
         }
     }
 }

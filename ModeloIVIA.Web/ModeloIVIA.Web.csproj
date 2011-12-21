@@ -76,7 +76,7 @@
     <Compile Include="ViewModels\Json\MensagemRetornoJson.cs" />
     <Compile Include="ViewModels\Json\MensagemRetornoJsonTipo.cs" />
     <Compile Include="ViewModels\UsuarioJS\IndexViewModel.cs" />
-    <Compile Include="ViewModels\UsuarioJS\SalvarViewModel.cs" />
+    <Compile Include="ViewModels\UsuarioJS\SalvarUsuarioViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Style.css" />

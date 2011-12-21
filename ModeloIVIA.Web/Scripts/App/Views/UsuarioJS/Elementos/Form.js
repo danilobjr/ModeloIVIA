@@ -50,7 +50,7 @@ ModeloIVIA.Elemento.Form.prototype = {
         this.complemento.val(dados.Usuario.Endereco.Complemento);
 
         this.estado.children('[value=' + dados.Usuario.Endereco.Cidade.IdEstado + ']').attr('selected', true);
-        
+
         this.preencherCidades(dados.Cidades);
         this.cidade.children('[value=' + dados.Usuario.Endereco.Cidade.Id + ']').attr('selected', true);
     },
@@ -65,10 +65,41 @@ ModeloIVIA.Elemento.Form.prototype = {
     },
     preencherCidades: function (cidades) {
 
+        /// <summary>Preenche o SELECT de cidades.</summary>
+        /// <returns type="void" />
+
         var dropDownCidade = this.cidade.append(new Option('Selecione'));
 
         $.each(cidades, function (i, cidade) {
             dropDownCidade.append(new Option(cidade.Descricao, cidade.Id));
         });
+    },
+    salvarNovo: function (successCallback) {
+        var parametros = this.form.serialize();
+
+        ModeloIVIA.Servidor.ajax({
+            url: "/UsuarioJS/SalvarNovoUsuario",
+            parametros: parametros,
+            successCallback: function (resultado) {
+                if (resultado.Sucesso) {
+                    if (typeof (successCallback) === 'function') {
+                        successCallback.call(this, resultado.Dados);
+                    }
+
+                    alert('Salvo!');
+                }
+                else {
+                    alert('Não salvo. =(');
+                }
+            }
+        });
+    },
+    salvarUsuario: function (successCallback) {
+        if (this.idUsuario.val()) {
+            // processar alteracao
+        }
+        else {
+            this.salvarNovo(successCallback);
+        }
     }
 };

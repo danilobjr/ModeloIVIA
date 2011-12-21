@@ -109,13 +109,13 @@ ModeloIVIA.Componente.DataTables.prototype = {
             throw new TypeError("DataTables.adicionarLinhas(): O parâmetro 'linhas' não é do tipo Array");
         }
 
-        if (linhas.length) {
+        if (!linhas.length) {
             throw new RangeError("DataTables.adicionarLinhas(): O parâmetro 'linhas' não pode ser um Array vazio");
         }
 
         for (var cont = 0; cont < linhas.length; cont++) {
             var temSubitemVazio = false;
-            if (linhas[cont].length && !temSubitemVazio) {
+            if (!linhas[cont].length && !temSubitemVazio) {
                 temSubitemVazio = true;
             }
         }

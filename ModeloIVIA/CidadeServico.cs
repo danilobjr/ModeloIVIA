@@ -26,5 +26,10 @@ namespace ModeloIVIA
         {
             return _cidadeRepositorio.ObterCidadesPorEstado(idEstado).ToList();
         }
+
+        public Cidade Obter(int idCidade)
+        {
+            return _cidadeRepositorio.Obter(idCidade);
+        }
     }
 }

@@ -45,20 +45,22 @@ namespace ModeloIVIA.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResult Salvar(SalvarViewModel viewModel)
+        public JsonResult SalvarNovoUsuario(SalvarUsuarioViewModel viewModel)
         {
             try
             {
                 var usuario = Mapeador.ParaUsuario(viewModel);
-                //_usuarioServico.Salvar();
+                _usuarioServico.SalvarNovoUsuario(usuario);
+                var listaUsuariosAtualizados = _usuarioServico.ObterTodos();
 
                 return Json(new JsonViewModel
                 {
                     Sucesso = true,
+                    Dados = listaUsuariosAtualizados,
                     Mensagem = new MensagemRetornoJson
                     {
                         Titulo = MensagemRetornoJsonTipo.Sucesso,
-                        Corpo = MensagemRetornoJson.SucessoUsuarioJSSalvar
+                        Corpo = MensagemRetornoJson.SucessoUsuarioJSSalvarNovoUsuario
                     }
                 });
             }
@@ -70,7 +72,40 @@ namespace ModeloIVIA.Web.Controllers
                     Mensagem = new MensagemRetornoJson
                     {
                         Titulo = MensagemRetornoJsonTipo.Erro,
-                        Corpo = MensagemRetornoJson.ErroUsuarioJSSalvar,
+                        Corpo = MensagemRetornoJson.ErroUsuarioJSSalvarNovoUsuario,
+                        Excecao = e
+                    }
+                });
+            }
+        }
+
+        [HttpPost]
+        public JsonResult SalvarAlteracaoUsuario(SalvarUsuarioViewModel viewModel)
+        {
+            try
+            {
+                var usuario = Mapeador.ParaUsuario(viewModel);
+                _usuarioServico.SalvarAlteracaoUsuario(usuario);
+
+                return Json(new JsonViewModel
+                {
+                    Sucesso = true,
+                    Mensagem = new MensagemRetornoJson
+                    {
+                        Titulo = MensagemRetornoJsonTipo.Sucesso,
+                        Corpo = MensagemRetornoJson.SucessoUsuarioJSSalvarAlteracaoUsuario
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                return Json(new JsonViewModel
+                {
+                    Sucesso = false,
+                    Mensagem = new MensagemRetornoJson
+                    {
+                        Titulo = MensagemRetornoJsonTipo.Erro,
+                        Corpo = MensagemRetornoJson.ErroUsuarioJSSalvarAlteracaoUsuario,
                         Excecao = e
                     }
                 });
