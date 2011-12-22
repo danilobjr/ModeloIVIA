@@ -109,6 +109,7 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\App\Componentes\Botao.js" />
+    <Content Include="Scripts\App\Componentes\InfoMessage.js" />
     <Content Include="Scripts\App\Componentes\Validador.js" />
     <Content Include="Scripts\App\Main\Namespace.js" />
     <Content Include="Scripts\App\Main\MainViewModel.js" />

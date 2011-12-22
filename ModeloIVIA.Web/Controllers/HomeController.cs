@@ -10,6 +10,8 @@ namespace ModeloIVIA.Web.Controllers
     {
         public ActionResult Index()
         {
+            Session.Abandon();
+
             ViewBag.Message = "Bem-vindo!";
 
             return View();

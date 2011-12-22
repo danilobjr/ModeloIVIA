@@ -1,4 +1,6 @@
 ﻿/// <reference path="../../../Main/Namespace.js" />
+/// <reference path="../../../Componentes/Dialog.js" />
+
 
 ModeloIVIA.Elemento.Form = function Form() {
 
@@ -77,6 +79,8 @@ ModeloIVIA.Elemento.Form.prototype = {
     salvarNovo: function (successCallback) {
         var parametros = this.form.serialize();
 
+        var _limparForm = this.limpar;
+
         ModeloIVIA.Servidor.ajax({
             url: "/UsuarioJS/SalvarNovoUsuario",
             parametros: parametros,
@@ -86,11 +90,10 @@ ModeloIVIA.Elemento.Form.prototype = {
                         successCallback.call(this, resultado.Dados);
                     }
 
-                    alert('Salvo!');
+                    _limparForm();
                 }
-                else {
-                    alert('Não salvo. =(');
-                }
+
+                ModeloIVIA.Componente.Dialog.mostrarMensagemSucesso('Usuário', resultado.Mensagem.Descricao);
             }
         });
     },

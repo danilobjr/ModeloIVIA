@@ -60,7 +60,7 @@ namespace ModeloIVIA.Web.Controllers
                     Mensagem = new MensagemRetornoJson
                     {
                         Titulo = MensagemRetornoJsonTipo.Sucesso,
-                        Corpo = MensagemRetornoJson.SucessoUsuarioJSSalvarNovoUsuario
+                        Descricao = MensagemRetornoJson.SucessoUsuarioJSSalvarNovoUsuario
                     }
                 });
             }
@@ -72,7 +72,7 @@ namespace ModeloIVIA.Web.Controllers
                     Mensagem = new MensagemRetornoJson
                     {
                         Titulo = MensagemRetornoJsonTipo.Erro,
-                        Corpo = MensagemRetornoJson.ErroUsuarioJSSalvarNovoUsuario,
+                        Descricao = MensagemRetornoJson.ErroUsuarioJSSalvarNovoUsuario,
                         Excecao = e
                     }
                 });
@@ -93,7 +93,7 @@ namespace ModeloIVIA.Web.Controllers
                     Mensagem = new MensagemRetornoJson
                     {
                         Titulo = MensagemRetornoJsonTipo.Sucesso,
-                        Corpo = MensagemRetornoJson.SucessoUsuarioJSSalvarAlteracaoUsuario
+                        Descricao = MensagemRetornoJson.SucessoUsuarioJSSalvarAlteracaoUsuario
                     }
                 });
             }
@@ -105,7 +105,7 @@ namespace ModeloIVIA.Web.Controllers
                     Mensagem = new MensagemRetornoJson
                     {
                         Titulo = MensagemRetornoJsonTipo.Erro,
-                        Corpo = MensagemRetornoJson.ErroUsuarioJSSalvarAlteracaoUsuario,
+                        Descricao = MensagemRetornoJson.ErroUsuarioJSSalvarAlteracaoUsuario,
                         Excecao = e
                     }
                 });
@@ -141,7 +141,7 @@ namespace ModeloIVIA.Web.Controllers
                     Mensagem = new MensagemRetornoJson
                     {
                         Titulo = MensagemRetornoJsonTipo.Erro,
-                        Corpo = MensagemRetornoJson.ErroUsuarioJSObterUsuarioParaAlteracao,
+                        Descricao = MensagemRetornoJson.ErroUsuarioJSObterUsuarioParaAlteracao,
                         Excecao = e
                     }
                 });
@@ -176,7 +176,42 @@ namespace ModeloIVIA.Web.Controllers
                     Mensagem = new MensagemRetornoJson
                     {
                         Titulo = MensagemRetornoJsonTipo.Erro,
-                        Corpo = MensagemRetornoJson.ErroUsuarioJSObterCidadesPorEstado,
+                        Descricao = MensagemRetornoJson.ErroUsuarioJSObterCidadesPorEstado,
+                        Excecao = e
+                    }
+                });
+            }
+        }
+
+        [HttpPost]
+        public JsonResult ObterTodosUsuarios()
+        {
+            try
+            {
+                var usuarios = _usuarioServico.ObterTodos();
+
+                if (usuarios != null)
+                {
+                    return Json(new JsonViewModel
+                    {
+                        Sucesso = true,
+                        Dados = usuarios
+                    });
+                }
+                else
+                {
+                    throw new Exception("Usuários não encontrados.");
+                }
+            }
+            catch (Exception e)
+            {
+                return Json(new JsonViewModel
+                {
+                    Sucesso = false,
+                    Mensagem = new MensagemRetornoJson
+                    {
+                        Titulo = MensagemRetornoJsonTipo.Erro,
+                        Descricao = MensagemRetornoJson.ErroUsuarioJSObterTodosUsuarios,
                         Excecao = e
                     }
                 });

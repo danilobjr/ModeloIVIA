@@ -4,6 +4,8 @@
 
 nav#crudSections
 {
+    margin-bottom: 10px;
+    height: 53px;
     font-size: 36px;
 }
 
@@ -13,16 +15,18 @@ nav#crudSections a
     display: block;
     margin-right: 5px;
     padding: 2px 15px;
-    background-color: #F0F0F0;
-    border-radius: 4px 4px 0 0;
+    /*background-color: #F0F0F0;*/
+    border: 1px solid #BBB;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
 }
 
 nav#crudSections a:hover
 {
     color: Black;
     cursor: pointer;
-    border: 0;
-    background-color: gainsboro;
+    border: 1px solid gray;
+    /*background-color: gainsboro;*/
 }
 
 nav#crudSections a:selected
@@ -41,7 +45,8 @@ nav#crudSections a:selected
     /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEE), color-stop(100%,#CCC));*/
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#eeeeee), color-stop(100%,#d8d8d8));
     border: 1px solid gainsboro;
-    border-radius: 0 4px 4px 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
 }
 
 .tab-ativa

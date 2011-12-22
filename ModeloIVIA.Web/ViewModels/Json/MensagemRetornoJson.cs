@@ -13,10 +13,11 @@ namespace ModeloIVIA.Web.ViewModels.Json
         public static string SucessoUsuarioJSSalvarNovoUsuario = "Novo usuário incluído com sucesso.";
         public static string SucessoUsuarioJSSalvarAlteracaoUsuario = "Usuário alterado com sucesso.";
         public static string ErroUsuarioJSSalvarAlteracaoUsuario = "Ocorreu um erro ao tentar alterar usuário.";
+        public static string ErroUsuarioJSObterTodosUsuarios;
 
 
         public MensagemRetornoJsonTipo Titulo { get; set; }
-        public string Corpo { get; set; }
+        public string Descricao { get; set; }
         public Exception Excecao { get; set; }
     }
 }

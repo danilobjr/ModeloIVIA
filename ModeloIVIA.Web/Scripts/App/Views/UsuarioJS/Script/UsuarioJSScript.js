@@ -85,23 +85,9 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
         event.preventDefault();
         // TODO - validação
 
-        var atualizarTabelaUsuarios = function (usuarios) {
+        var callback = that.tabelaUsuarios.atualizar;
 
-            listaUsuarios = [];
-
-            $.each(usuarios, function (i, usuario) {
-                listaUsuarios.push([
-                    usuario.Nome,
-                    usuario.Email,
-                    usuario.Grupo.Nome,
-                    usuario.Grupo.Perfil,
-                    "<a class='alterar' href='/UsuarioJS/ObterUsuarioParaAlteracao?idUsuario='"+ usuario.Id +">alterar</a>"
-                ]);
-            });
-
-            that.tabelaUsuarios.adicionarLinhas(listaUsuarios);
-        };
-        that.form.salvarUsuario(atualizarTabelaUsuarios);
+        that.form.salvarUsuario(callback);
     };
 
     $('#salvar').click(that.salvarUsuario);
