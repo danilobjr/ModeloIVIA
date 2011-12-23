@@ -97,7 +97,8 @@ ModeloIVIA.Elemento.Form.prototype = {
                 }
 
                 ModeloIVIA.Componente.Dialog.alert('Usuário', resultado.Mensagem.Descricao);
-            }
+            },
+            loader: $('.loader')
         });
     },
     salvarUsuario: function (callback) {

@@ -40,11 +40,13 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
         event.preventDefault();
         var elemento = $(event.currentTarget);
         var url = elemento.attr('href');
+        $('select[name=Cidade]').removeAttr('disabled');
         ModeloIVIA.Servidor.ajax({
             url: url,
             successCallback: function (resultado) {
                 that.form.preencher(resultado.Dados);
-            }
+            },
+            loader: $('.loader')
         });
         that.slider.irParaSlide(1);
     };
@@ -76,7 +78,8 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
                 $.each(resultado.Dados, function (cont, cidade) {
                     dropDown.append(new Option(cidade.Descricao, cidade.Id));
                 });
-            }
+            },
+            loader: $('.loader')
         });
     };
 

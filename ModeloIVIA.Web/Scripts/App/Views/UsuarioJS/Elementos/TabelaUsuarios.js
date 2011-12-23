@@ -41,7 +41,8 @@ ModeloIVIA.Elemento.TabelaUsuarios.prototype.atualizar = function () {
 
                 that.adicionarLinhas(listaUsuarios);
             }
-        }
+        },
+        loader: $('.loader')
     });
 };
 
@@ -58,6 +59,7 @@ ModeloIVIA.Elemento.TabelaUsuarios.prototype.excluirUsuario = function (event) {
                 ModeloIVIA.Componente.Dialog.alert(resultado.Mensagem.Titulo, resultado.Mensagem.Descricao);
                 that.atualizar();
             }
-        }
+        },
+        loader: $('.loader')
     });
 };
