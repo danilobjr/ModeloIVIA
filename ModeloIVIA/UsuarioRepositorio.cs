@@ -59,6 +59,12 @@ namespace ModeloIVIA
 
         internal void SalvarNovo(Usuario usuario)
         {
+            foreach (var usuarioDaLista in Usuarios)
+            {
+                if (usuarioDaLista.Id >= usuario.Id)
+                    usuario.Id = usuarioDaLista.Id + 1;
+            }
+
             Usuarios.Add(usuario);
         }
 

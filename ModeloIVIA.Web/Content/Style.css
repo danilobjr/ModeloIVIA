@@ -49,6 +49,13 @@ nav#crudSections a:selected
     -moz-border-radius: 4px;
 }
 
+form select
+{
+    min-width: 110px;
+}
+
+/* TABs */
+
 .tab-ativa
 {
     background-color: gainsboro !important; 

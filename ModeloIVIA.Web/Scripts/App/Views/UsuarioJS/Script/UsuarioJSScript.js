@@ -49,7 +49,8 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
         that.slider.irParaSlide(1);
     };
 
-    $(that.tabelaUsuarios.obterTodasAsLinhas()).find('.alterar').click(that.obterUsuarioParaAlteracao);
+    //$(that.tabelaUsuarios.obterTodasAsLinhas()).find('.alterar').live('click', that.obterUsuarioParaAlteracao);
+    $('.alterar').live('click', that.obterUsuarioParaAlteracao);
 
     that.limparCamposForm = function (event) {
         event.preventDefault();
@@ -67,7 +68,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
             url: "/UsuarioJS/ObterCidadesPorEstado",
             parametros: parametros,
             successCallback: function (resultado) {
-                var dropDown = $('select[name=Cidade]');
+                var dropDown = $('select[name=Cidade]').removeAttr('disabled');
 
                 dropDown.children().remove();
                 dropDown.append(new Option('Selecione'));
@@ -85,7 +86,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
         event.preventDefault();
         // TODO - validação
 
-        var callback = that.tabelaUsuarios.atualizar;
+        var callback = function () { that.tabelaUsuarios.atualizar(); };
 
         that.form.salvarUsuario(callback);
     };

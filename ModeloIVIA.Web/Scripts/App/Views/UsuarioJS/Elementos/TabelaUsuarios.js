@@ -16,15 +16,14 @@ ModeloIVIA.Elemento.TabelaUsuarios.prototype = new ModeloIVIA.Componente.DataTab
 
 ModeloIVIA.Elemento.TabelaUsuarios.prototype.atualizar = function () {
 
-    var limparTabela = this.limparTabela;
-    var adicionarLinhas = this.adicionarLinha;
+    var that = this;
 
     ModeloIVIA.Servidor.ajax({
         url: '/UsuarioJS/ObterTodosUsuarios',
         parametros: '',
         successCallback: function (resultado) {
 
-            limparTabela();
+            that.limparTabela();
 
             if (resultado.Sucesso) {
                 listaUsuarios = [];
@@ -35,11 +34,11 @@ ModeloIVIA.Elemento.TabelaUsuarios.prototype.atualizar = function () {
                         usuario.Email,
                         usuario.Grupo.Nome,
                         usuario.Grupo.Perfil,
-                        "<a class='alterar' href='/UsuarioJS/ObterUsuarioParaAlteracao?idUsuario='" + usuario.Id + ">alterar</a>"
+                        "<a class='alterar' href='/UsuarioJS/ObterUsuarioParaAlteracao?idUsuario=" + usuario.Id + "'>alterar</a>"
                     ]);
                 });
 
-                adicionarLinhas(listaUsuarios);
+                that.adicionarLinhas(listaUsuarios);
             }
         }
     });

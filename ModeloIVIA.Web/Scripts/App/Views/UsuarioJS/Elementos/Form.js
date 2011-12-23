@@ -63,7 +63,10 @@ ModeloIVIA.Elemento.Form.prototype = {
 
         this.form
             .find('input[type=text], input[type=hidden]').val('').end()
-            .find('select').children().removeAttr('selected');
+            .find('select').children().removeAttr('selected').end()
+            .filter('[name=Cidade]')
+                .children().remove().end()
+                .append(new Option('Selecione um estado')); ;
     },
     preencherCidades: function (cidades) {
 
@@ -76,33 +79,38 @@ ModeloIVIA.Elemento.Form.prototype = {
             dropDownCidade.append(new Option(cidade.Descricao, cidade.Id));
         });
     },
-    salvarNovo: function (successCallback) {
+    salvar: function (url, callback) {
         var parametros = this.form.serialize();
 
-        var _limparForm = this.limpar;
+        var that = this;
 
         ModeloIVIA.Servidor.ajax({
-            url: "/UsuarioJS/SalvarNovoUsuario",
+            url: url,
             parametros: parametros,
             successCallback: function (resultado) {
                 if (resultado.Sucesso) {
-                    if (typeof (successCallback) === 'function') {
-                        successCallback.call(this, resultado.Dados);
+                    if (typeof (callback) === 'function') {
+                        callback();
                     }
 
-                    _limparForm();
+                    that.limpar();
                 }
 
                 ModeloIVIA.Componente.Dialog.mostrarMensagemSucesso('Usuário', resultado.Mensagem.Descricao);
             }
         });
     },
-    salvarUsuario: function (successCallback) {
+    salvarUsuario: function (callback) {
+
+        var url = '';
+
         if (this.idUsuario.val()) {
-            // processar alteracao
+            url = '/UsuarioJS/SalvarAlteracaoUsuario';
         }
         else {
-            this.salvarNovo(successCallback);
+            url = '/UsuarioJS/SalvarNovoUsuario';
         }
+
+        this.salvar(url, callback);
     }
 };
