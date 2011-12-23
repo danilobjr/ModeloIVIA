@@ -10,6 +10,8 @@ ModeloIVIA.Elemento.TabelaUsuarios = function TabelaUsuarios(idTabela) {
 
     ModeloIVIA.Componente.DataTables.call(this, idTabela);
 
+    this.bigLoader = $('.loader');
+
 };
 
 ModeloIVIA.Elemento.TabelaUsuarios.prototype = new ModeloIVIA.Componente.DataTables();
@@ -42,7 +44,7 @@ ModeloIVIA.Elemento.TabelaUsuarios.prototype.atualizar = function () {
                 that.adicionarLinhas(listaUsuarios);
             }
         },
-        loader: $('.loader')
+        loader: that.bigLoader
     });
 };
 
@@ -60,6 +62,6 @@ ModeloIVIA.Elemento.TabelaUsuarios.prototype.excluirUsuario = function (event) {
                 that.atualizar();
             }
         },
-        loader: $('.loader')
+        loader: that.bigLoader
     });
 };

@@ -24,6 +24,8 @@ ModeloIVIA.Elemento.Form = function Form() {
 
     this.cidade = $('select[name=Cidade]');
     this.estado = $('select[name=Estado]');
+
+    this.cidadeLoader = $('#cidadeLoader');
 };
 
 ModeloIVIA.Elemento.Form.prototype = {

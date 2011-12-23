@@ -16,6 +16,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     that.tabelaUsuarios = that.viewModel.tabelaUsuarios;
     that.slider = that.viewModel.sliderCRUD;
     that.validador = that.viewModel.validador;
+    that.bigLoader = $('.loader');
 
 
     // Comportamentos ======================================== /
@@ -46,7 +47,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
             successCallback: function (resultado) {
                 that.form.preencher(resultado.Dados);
             },
-            loader: $('.loader')
+            loader: that.bigLoader
         });
         that.slider.irParaSlide(1);
     };
@@ -79,7 +80,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
                     dropDown.append(new Option(cidade.Descricao, cidade.Id));
                 });
             },
-            loader: $('.loader')
+            loader: $('#cidadeLoader')
         });
     };
 

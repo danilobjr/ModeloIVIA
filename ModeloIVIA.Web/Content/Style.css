@@ -68,3 +68,12 @@ form select
     text-align: center;
     margin: 20px auto 14px auto;
 }
+
+/* LOADER Cidades */
+
+#cidadeLoader
+{
+    display: none;
+    position: relative;
+    margin: -17px 0 -22px 48px;
+}
