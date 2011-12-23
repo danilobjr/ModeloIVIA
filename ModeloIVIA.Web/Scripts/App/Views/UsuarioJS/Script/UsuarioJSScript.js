@@ -92,6 +92,20 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     };
 
     $('#salvar').click(that.salvarUsuario);
+
+    that.excluirUsuario = function (event) {
+        event.preventDefault();
+
+        //var callback = function () { that.tabelaUsuarios.atualizar(); };
+
+        var funcaoConfirmacao = function () {
+            that.tabelaUsuarios.excluirUsuario(event);
+        }
+
+        ModeloIVIA.Componente.Dialog.confirm("Exclusão", "Deseja realmente excluir este usuário?", funcaoConfirmacao);
+    };
+
+    $('.excluir').live('click', that.excluirUsuario);
 };
 
 

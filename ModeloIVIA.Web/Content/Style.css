@@ -60,3 +60,11 @@ form select
 {
     background-color: gainsboro !important; 
 }
+
+/* DIALOG */
+
+.ui-dialog-content p
+{
+    text-align: center;
+    margin: 20px auto 14px auto;
+}

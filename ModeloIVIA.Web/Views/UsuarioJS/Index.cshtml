@@ -167,6 +167,9 @@
                         <td>
                             @Html.ActionLink("alterar", "ObterUsuarioParaAlteracao", "UsuarioJS",
                                              new { @idUsuario = usuario.Id }, new { @class = "alterar" })
+                            |
+                            @Html.ActionLink("excluir", "ExcluirUsuario", "UsuarioJS",
+                                             new { @idUsuario = usuario.Id }, new { @class = "excluir" })
                         </td>
                     </tr>
                 }

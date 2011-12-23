@@ -96,7 +96,7 @@ ModeloIVIA.Elemento.Form.prototype = {
                     that.limpar();
                 }
 
-                ModeloIVIA.Componente.Dialog.mostrarMensagemSucesso('Usuário', resultado.Mensagem.Descricao);
+                ModeloIVIA.Componente.Dialog.alert('Usuário', resultado.Mensagem.Descricao);
             }
         });
     },

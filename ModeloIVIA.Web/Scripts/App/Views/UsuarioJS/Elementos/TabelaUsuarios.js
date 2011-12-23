@@ -34,11 +34,29 @@ ModeloIVIA.Elemento.TabelaUsuarios.prototype.atualizar = function () {
                         usuario.Email,
                         usuario.Grupo.Nome,
                         usuario.Grupo.Perfil,
-                        "<a class='alterar' href='/UsuarioJS/ObterUsuarioParaAlteracao?idUsuario=" + usuario.Id + "'>alterar</a>"
+                        "<a class='alterar' href='/UsuarioJS/ObterUsuarioParaAlteracao?idUsuario=" + usuario.Id + "'>alterar</a> | " +
+                        "<a class='excluir' href='/UsuarioJS/ExcluirUsuario?idUsuario=" + usuario.Id + "'>excluir</a>"
                     ]);
                 });
 
                 that.adicionarLinhas(listaUsuarios);
+            }
+        }
+    });
+};
+
+ModeloIVIA.Elemento.TabelaUsuarios.prototype.excluirUsuario = function (event) {
+
+    var that = this;
+    var elemento = $(event.currentTarget);
+    var url = elemento.attr('href');
+
+    ModeloIVIA.Servidor.ajax({
+        url: url,
+        successCallback: function (resultado) {
+            if (resultado.Sucesso) {
+                ModeloIVIA.Componente.Dialog.alert(resultado.Mensagem.Titulo, resultado.Mensagem.Descricao);
+                that.atualizar();
             }
         }
     });

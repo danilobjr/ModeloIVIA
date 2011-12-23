@@ -59,7 +59,7 @@ namespace ModeloIVIA.Web.Controllers
                     Dados = listaUsuariosAtualizados,
                     Mensagem = new MensagemRetornoJson
                     {
-                        Titulo = MensagemRetornoJsonTipo.Sucesso,
+                        Titulo = MensagemRetornoJsonTipo.Sucesso.ToString(),
                         Descricao = MensagemRetornoJson.SucessoUsuarioJSSalvarNovoUsuario
                     }
                 });
@@ -71,7 +71,7 @@ namespace ModeloIVIA.Web.Controllers
                     Sucesso = false,
                     Mensagem = new MensagemRetornoJson
                     {
-                        Titulo = MensagemRetornoJsonTipo.Erro,
+                        Titulo = MensagemRetornoJsonTipo.Erro.ToString(),
                         Descricao = MensagemRetornoJson.ErroUsuarioJSSalvarNovoUsuario,
                         Excecao = e
                     }
@@ -92,7 +92,7 @@ namespace ModeloIVIA.Web.Controllers
                     Sucesso = true,
                     Mensagem = new MensagemRetornoJson
                     {
-                        Titulo = MensagemRetornoJsonTipo.Sucesso,
+                        Titulo = MensagemRetornoJsonTipo.Sucesso.ToString(),
                         Descricao = MensagemRetornoJson.SucessoUsuarioJSSalvarAlteracaoUsuario
                     }
                 });
@@ -104,8 +104,40 @@ namespace ModeloIVIA.Web.Controllers
                     Sucesso = false,
                     Mensagem = new MensagemRetornoJson
                     {
-                        Titulo = MensagemRetornoJsonTipo.Erro,
+                        Titulo = MensagemRetornoJsonTipo.Erro.ToString(),
                         Descricao = MensagemRetornoJson.ErroUsuarioJSSalvarAlteracaoUsuario,
+                        Excecao = e
+                    }
+                });
+            }
+        }
+
+        [HttpPost]
+        public JsonResult ExcluirUsuario(int idUsuario)
+        {
+            try
+            {
+                _usuarioServico.Excluir(idUsuario);
+
+                return Json(new JsonViewModel
+                {
+                    Sucesso = true,
+                    Mensagem = new MensagemRetornoJson
+                    {
+                        Titulo = MensagemRetornoJsonTipo.Sucesso.ToString(),
+                        Descricao = MensagemRetornoJson.SucessoUsuarioJsExcluirUsuario
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                return Json(new JsonViewModel
+                {
+                    Sucesso = false,
+                    Mensagem = new MensagemRetornoJson
+                    {
+                        Titulo = MensagemRetornoJsonTipo.Erro.ToString(),
+                        Descricao = MensagemRetornoJson.ErroUsuarioJsExcluirUsuario,
                         Excecao = e
                     }
                 });
@@ -140,7 +172,7 @@ namespace ModeloIVIA.Web.Controllers
                     Sucesso = false,
                     Mensagem = new MensagemRetornoJson
                     {
-                        Titulo = MensagemRetornoJsonTipo.Erro,
+                        Titulo = MensagemRetornoJsonTipo.Erro.ToString(),
                         Descricao = MensagemRetornoJson.ErroUsuarioJSObterUsuarioParaAlteracao,
                         Excecao = e
                     }
@@ -175,7 +207,7 @@ namespace ModeloIVIA.Web.Controllers
                     Sucesso = false,
                     Mensagem = new MensagemRetornoJson
                     {
-                        Titulo = MensagemRetornoJsonTipo.Erro,
+                        Titulo = MensagemRetornoJsonTipo.Erro.ToString(),
                         Descricao = MensagemRetornoJson.ErroUsuarioJSObterCidadesPorEstado,
                         Excecao = e
                     }
@@ -210,7 +242,7 @@ namespace ModeloIVIA.Web.Controllers
                     Sucesso = false,
                     Mensagem = new MensagemRetornoJson
                     {
-                        Titulo = MensagemRetornoJsonTipo.Erro,
+                        Titulo = MensagemRetornoJsonTipo.Erro.ToString(),
                         Descricao = MensagemRetornoJson.ErroUsuarioJSObterTodosUsuarios,
                         Excecao = e
                     }

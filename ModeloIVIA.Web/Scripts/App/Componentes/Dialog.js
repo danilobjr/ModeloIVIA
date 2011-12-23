@@ -25,16 +25,44 @@ ModeloIVIA.Componente.Dialog = function () {
 
 };
 
-ModeloIVIA.Componente.Dialog.mostrarMensagemSucesso = function (titulo, mensagem) {
+ModeloIVIA.Componente.Dialog.alert = function (titulo, mensagem) {
 
     var dialog = new ModeloIVIA.Componente.Dialog();
 
     $(dialog.mensagem).html(mensagem);
     $(dialog.container)
         .dialog('option', {
-            dialogClass: 'success',
+            width: 350,
             title: titulo,
             buttons: { "OK": function () { $(this).dialog('close'); } }
         })
         .dialog('open');
+};
+
+ModeloIVIA.Componente.Dialog.confirm = function (titulo, mensagem, funcaoConfirmacao) {
+
+    var dialog = new ModeloIVIA.Componente.Dialog();
+
+    $(dialog.mensagem).html(mensagem);
+    $(dialog.container)
+    .dialog('option', {
+        width: 350,
+        title: titulo,
+        buttons: [
+            {
+                text: "Sim",
+                click: function () {
+                    $(this).dialog('close');
+                    if (typeof (funcaoConfirmacao) === 'function') {
+                        funcaoConfirmacao();
+                    }
+                }
+            },
+            {
+                text: "Não",
+                click: function () { $(this).dialog('close'); }
+            }
+        ]
+    })
+    .dialog('open');
 };

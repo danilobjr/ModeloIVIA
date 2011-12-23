@@ -51,5 +51,12 @@ namespace ModeloIVIA
 
             _usuarioRepositorio.SalvarAlteracao(usuarioOriginal);
         }
+
+        public void Excluir(int idUsuario)
+        {
+            var usuario = _usuarioRepositorio.Obter(idUsuario);
+
+            _usuarioRepositorio.Excluir(usuario);
+        }
     }
 }

@@ -210,10 +210,11 @@ ul#menu li a
 }
 
 ul#menu li a:hover {
-    color: Gray;
+    color: gray;
     text-decoration: none;
-    background-color: #cccccc;/*#606C88;*/
+    background-color: #EEE;
     border: 0;
+    box-shadow: inset 2px 2px 3px gray;
 }
 
 ul#menu li a:active {

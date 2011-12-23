@@ -78,5 +78,10 @@ namespace ModeloIVIA
             Usuarios.RemoveAll(u => u.Id == usuarioOriginal.Id);
             Usuarios.Add(usuarioOriginal);
         }
+
+        internal void Excluir(Usuario usuario)
+        {
+            Usuarios.Remove(usuario);
+        }
     }
 }
