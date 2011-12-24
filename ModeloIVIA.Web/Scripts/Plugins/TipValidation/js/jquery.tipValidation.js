@@ -1,9 +1,3 @@
-/*
-* File:        jquery.tipValidation.js
-* Version:     1.0
-* Author:      Danilo Jr (twitter.com/danilojrr)
-*/
-
 (function ($) {
 
     // Default options
@@ -14,7 +8,7 @@
             zIndex: '1000',
             containerClass: 'tipvalidation',
             wrapperClass: 'tipvalidation-wrapper',
-            contentClass: 'tipvalidation-content'//,
+            contentClass: 'tipvalidation-content'
         }
     };
 
@@ -28,11 +22,27 @@
 
             $.tipValidation.init(this, config);
 
-
             // Methods
 
             this.removeAll = function () {
                 $.tipValidation.removeAll(this, config);
+            };
+
+            this.isValid = function () {
+                var elements = this;
+                var isValid = true;
+
+                $.each(elements, function (i, element) {
+                    if ($.tipValidation.isATipvalidationField(element)) {
+                        var e = { currentTarget: element };
+                        var elementConfig = $.tipValidation.createElementConfig(e, config);
+                        var fieldIsValid = $.tipValidation.isValid(elementConfig);
+
+                        isValid = fieldIsValid && isValid;
+                    }
+                });
+
+                return isValid;
             };
 
             return this;
@@ -40,16 +50,32 @@
 
     });
 
+    $.tipValidation.isATipvalidationField = function (element) {
+        element = $(element);
+
+        if (!element.is('[tipvalidation]') || element.attr('tipvalidation') === '' || element.is('[tipvalidation-link]'))
+            return false;
+        else if (!element.hasClass('tipvalidation-source')) {
+            element.addClass('tipvalidation-source');
+        }
+
+        return true;
+    };
+
     $.tipValidation.init = function (that, config) {
         $.each(that, function (index, element) {
             element = $(element);
 
-            if (!element.is('[tipvalidation]') || element.attr('tipvalidation') === '' || element.is('[tipvalidation-link]'))
-                return element;
-            else if (!element.hasClass('tipvalidation-source')) {
-                element.addClass('tipvalidation-source');
+            //            if (!element.is('[tipvalidation]') || element.attr('tipvalidation') === '' || element.is('[tipvalidation-link]'))
+            //                return element;
+            //            else if (!element.hasClass('tipvalidation-source')) {
+            //                element.addClass('tipvalidation-source');
 
-                // Event Handlers
+            if (!($.tipValidation.isATipvalidationField(element)))
+                return element;
+            else {
+
+                // Event Handlers                
 
                 element.blur(function (e) {
                     setTimeout(function () {
@@ -60,15 +86,20 @@
         });
     };
 
-    $.tipValidation.blurVerification = function (e, config) {
+    $.tipValidation.createElementConfig = function (e, config) {
         var element = $(e.currentTarget);
 
-        var elementConfig = {
+        return elementConfig = {
             element: element,
             validations: element.attr('tipvalidation').split('-'),
             validationMessages: [],
             generalConfig: config
         };
+    };
+
+    $.tipValidation.blurVerification = function (e, config) {
+
+        var elementConfig = $.tipValidation.createElementConfig(e, config);
 
         var isValid = $.tipValidation.runValidation(elementConfig);
 
@@ -77,7 +108,8 @@
             $.tipValidation.buildToolTip(elementConfig);
         }
         else {
-            var toolTip = $('.' + config.containerClass + '[tipvalidation-link=' + element.attr('id') + ']');
+            var toolTip = $('.' + elementConfig.config.containerClass +
+                '[tipvalidation-link=' + elementConfig.element.attr('id') + ']');
             if (toolTip.length)
                 toolTip.trigger('hideToolTip');
         }
@@ -119,11 +151,12 @@
             }
         });
 
-        return $.tipValidation.isValid(elementConfig);
+        //return $.tipValidation.isValid(elementConfig);
+        return elementConfig.validationMessages.length === 0;
     };
 
     $.tipValidation.isValid = function (elementConfig) {
-        return elementConfig.validationMessages.length === 0;
+        return $.tipValidation.runValidation(elementConfig);
     };
 
     $.tipValidation.required = function (elementConfig) {
@@ -559,7 +592,7 @@
 
     $.tipValidation.removeAll = function (elements, config) {
         elements.each(function (index, element) {
-            var elementID = $(element).attr('id');
+            var elementID = $(element).attr('id') || $(element).attr('name');
             var toolTip = $('.' + config.containerClass + '[tipvalidation-link=' + elementID + ']');
 
             toolTip.fadeOut('fast', function () {
@@ -575,5 +608,7 @@
         if (toolTip.length)
             toolTip.trigger('hideToolTip');
     };
+
+    //$.tipValidation.
 
 })(jQuery);

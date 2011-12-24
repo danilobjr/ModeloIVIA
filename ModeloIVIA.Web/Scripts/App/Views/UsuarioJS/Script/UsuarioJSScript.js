@@ -88,11 +88,17 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
 
     that.salvarUsuario = function (event) {
         event.preventDefault();
-        // TODO - validação
 
-        var callback = function () { that.tabelaUsuarios.atualizar(); };
+        var formEhValido = that.validador.estahValido();
 
-        that.form.salvarUsuario(callback);
+        if (formEhValido) {
+            var callback = function () { that.tabelaUsuarios.atualizar(); };
+
+            that.form.salvarUsuario(callback);
+        }
+        else {
+            ModeloIVIA.Componente.Dialog.alert("Validação", "Para salvar, é necessário preencher os campos corretamente.");
+        }
     };
 
     $('#salvar').click(that.salvarUsuario);

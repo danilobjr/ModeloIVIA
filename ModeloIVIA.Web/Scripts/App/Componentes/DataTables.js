@@ -44,7 +44,7 @@ ModeloIVIA.Componente.DataTables = function DataTables(idTabela) {
         "oLanguage": {
             "sLengthMenu": "Mostrar _MENU_ registros",
             "sZeroRecords": "Nada encontrado",
-            "sEmptyTable": "Empty Table",
+            "sEmptyTable": "Não há registros",
             "sInfo": "Registro de _START_ a _END_. Total: _TOTAL_",
             "sInfoEmpty": "Nenhum registro",
             "sInfoFiltered": "(_MAX_ registros filtrados)",

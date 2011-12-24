@@ -37,6 +37,15 @@ ModeloIVIA.Componente.Validador.prototype = {
         /// <returns type="void" />
 
         this.validador.removeAll();
+    },
+    estahValido: function () {
+
+        /// <summary>
+        /// Verifica se os campos estao válidos.
+        /// </summary>
+        /// <returns type="Boolean" />
+
+        this.validador.isValid();
     }
 };
 
