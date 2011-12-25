@@ -38,14 +38,21 @@ ModeloIVIA.Componente.Validador.prototype = {
 
         this.validador.removeAll();
     },
-    estahValido: function () {
+    estahValido: function (destacarCampos, mostrarTooltipOnMouseOver) {
 
-        /// <summary>
-        /// Verifica se os campos estao válidos.
-        /// </summary>
+        /// <summary>Verifica se os campos estao válidos.</summary>
+        /// <param name="destacarCampos" type="Boolean">Modifica as cores da borda dos campos.</param>
+        /// <param name="mostrarTooltipOnMouseOver" type="Boolean"></param>
         /// <returns type="Boolean" />
 
-        this.validador.isValid();
+        this.validador.isValid(destacarCampos, mostrarTooltipOnMouseOver);
+    },
+    removerDestaquesDoCampos: function () {
+
+        /// <summary>Retira classe dos campos em destaque pelo validador.</summary>
+        /// <returns type="void" />
+
+        this.validador.removeHighlights();
     }
 };
 

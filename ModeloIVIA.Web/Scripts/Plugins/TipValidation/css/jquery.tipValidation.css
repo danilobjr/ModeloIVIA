@@ -128,3 +128,8 @@
     border-style: solid;    
     border-color: transparent transparent transparent #dd1b06;
 }
+
+.tipvalidation-highlighted
+{
+    border-color: firebrick !important;
+}

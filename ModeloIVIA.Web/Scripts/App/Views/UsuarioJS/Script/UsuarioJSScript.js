@@ -41,7 +41,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
         event.preventDefault();
         var elemento = $(event.currentTarget);
         var url = elemento.attr('href');
-        $('select[name=Cidade]').removeAttr('disabled');
+        //$('select[name=Cidade]').removeAttr('disabled');
         ModeloIVIA.Servidor.ajax({
             url: url,
             successCallback: function (resultado) {
@@ -58,9 +58,11 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     that.limparCamposForm = function (event) {
         event.preventDefault();
         that.form.limpar();
+        that.validador.removerDestaquesDoCampos();
+        that.validador.removerTodos();
     };
 
-    $('#limparForm').click(that.limparCamposForm);
+    $('#cancelar').click(that.limparCamposForm);
 
     that.obterCidadesPorEstado = function (event) {
         var elemento = $(event.currentTarget);
@@ -71,7 +73,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
             url: "/UsuarioJS/ObterCidadesPorEstado",
             parametros: parametros,
             successCallback: function (resultado) {
-                var dropDown = $('select[name=Cidade]').removeAttr('disabled');
+                var dropDown = $('select[name=Cidade]'); //.removeAttr('disabled');
 
                 dropDown.children().remove();
                 dropDown.append(new Option('Selecione'));
@@ -89,7 +91,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     that.salvarUsuario = function (event) {
         event.preventDefault();
 
-        var formEhValido = that.validador.estahValido();
+        var formEhValido = that.validador.estahValido(true, true);
 
         if (formEhValido) {
             var callback = function () { that.tabelaUsuarios.atualizar(); };

@@ -22,21 +22,35 @@
 
             $.tipValidation.init(this, config);
 
+            var that = this;
+
             // Methods
 
-            this.removeAll = function () {
+            that.removeAll = function () {
                 $.tipValidation.removeAll(this, config);
             };
 
-            this.isValid = function () {
+            that.isValid = function (highlightFields, showTooltipsOnMouseOver) {
+
                 var elements = this;
                 var isValid = true;
 
                 $.each(elements, function (i, element) {
-                    if ($.tipValidation.isATipvalidationField(element)) {
+                    if ($.tipValidation.isTipvalidationField(element)) {
                         var e = { currentTarget: element };
                         var elementConfig = $.tipValidation.createElementConfig(e, config);
                         var fieldIsValid = $.tipValidation.isValid(elementConfig);
+
+                        if (!fieldIsValid && highlightFields) {
+                            $.tipValidation.highlightField(element);
+                        }
+                        else {
+                            $.tipValidation.removeHighlight(element);
+                        }
+
+                        if (showTooltipsOnMouseOver) {
+                            $.tipValidation.processFocusEvent(elementConfig);
+                        }
 
                         isValid = fieldIsValid && isValid;
                     }
@@ -45,15 +59,23 @@
                 return isValid;
             };
 
-            return this;
+            that.removeHighlights = function () {
+                $.each(that, function (i, element) {
+                    $(element)
+                        .removeClass('tipvalidation-highlighted')
+                        .unbind('focus');
+                });
+            };
+
+            return that;
         }
 
     });
 
-    $.tipValidation.isATipvalidationField = function (element) {
+    $.tipValidation.isTipvalidationField = function (element) {
         element = $(element);
 
-        if (!element.is('[tipvalidation]') || element.attr('tipvalidation') === '' || element.is('[tipvalidation-link]'))
+        if (!element.is('[tipvalidation]') || element.attr('tipvalidation') === '')
             return false;
         else if (!element.hasClass('tipvalidation-source')) {
             element.addClass('tipvalidation-source');
@@ -71,7 +93,7 @@
             //            else if (!element.hasClass('tipvalidation-source')) {
             //                element.addClass('tipvalidation-source');
 
-            if (!($.tipValidation.isATipvalidationField(element)))
+            if (!($.tipValidation.isTipvalidationField(element)) || $.tipValidation.alreadyLinkedWithTooltip(element))
                 return element;
             else {
 
@@ -104,17 +126,59 @@
         var isValid = $.tipValidation.runValidation(elementConfig);
 
         if (!isValid) {
-            $.tipValidation.removeExistingTooltip(elementConfig);
-            $.tipValidation.buildToolTip(elementConfig);
+            //            if ($.tipValidation.tooltipIsBuilt(elementConfig.element)) {
+            //                $.tipValidation.changeTooltipContent(elementConfig);
+
+            //            }
+            //            else {
+            //                $.tipValidation.removeExistingTooltip(elementConfig);
+            //                $.tipValidation.buildToolTip(elementConfig);
+            //            }
+            $.tipValidation.processTooltipCreation(elementConfig);
         }
         else {
-            var toolTip = $('.' + elementConfig.config.containerClass +
-                '[tipvalidation-link=' + elementConfig.element.attr('id') + ']');
-            if (toolTip.length)
+            elementConfig.element.removeClass('tipvalidation-highlighted');
+            var elementIdentifier = elementConfig.element.attr('id') || elementConfig.element.attr('name');
+            var toolTip = $('.' + config.containerClass + '[tipvalidation-link=' + elementIdentifier + ']');
+
+            if (toolTip.length) {
                 toolTip.trigger('hideToolTip');
+            }
+
+            elementConfig.element.unbind('focus');
         }
     };
 
+    $.tipValidation.processFocusEvent = function (elementConfig) {
+        var element = elementConfig.element;
+
+        var events = element.data('events');
+
+        if (!(events['focus'])) {
+            element.focus(function () {
+                $.tipValidation.runValidation(elementConfig);
+                //                if ($.tipValidation.tooltipIsBuilt(elementConfig.element)) {
+                //                    $.tipValidation.changeTooltipContent(elementConfig);
+                //                }
+                //                else {
+                //                    $.tipValidation.removeExistingTooltip(elementConfig);
+                //                    $.tipValidation.buildToolTip(elementConfig);
+                //                }
+                $.tipValidation.processTooltipCreation(elementConfig);
+            });
+        }
+    };
+
+    $.tipValidation.processTooltipCreation = function (elementConfig) {
+        if (!($.tipValidation.tooltipIsBuilt(elementConfig.element))) {
+            $.tipValidation.removeExistingTooltip(elementConfig);
+            $.tipValidation.buildToolTip(elementConfig);
+        }
+        else if (!($.tipValidation.contentIsSame(elementConfig))) {
+            $.tipValidation.removeExistingTooltip(elementConfig);
+            $.tipValidation.buildToolTip(elementConfig);
+        }
+    };
 
     // Validation methods
 
@@ -256,8 +320,10 @@
         var element = elementConfig.element;
         var toolTip = elementConfig.toolTip;
 
-        toolTip.attr('tipvalidation-link', element.attr('id'));
-        element.attr('tipvalidation-link', element.attr('id'));
+        var elementIdentifier = element.attr('id') || element.attr('name');
+
+        toolTip.attr('tipvalidation-link', elementIdentifier);
+        element.attr('tipvalidation-link', elementIdentifier);
     };
 
     $.tipValidation.buildToolTip = function (elementConfig) {
@@ -276,17 +342,17 @@
         $.tipValidation.linkTooltipAndElement(elementConfig);
 
         var contentBorders = $('<div></div>')
-        .addClass('tipvalidation-content-borders')
-        .appendTo(elementConfig.toolTipWrapper);
+            .addClass('tipvalidation-content-borders')
+            .appendTo(elementConfig.toolTipWrapper);
 
         $('<div></div>')
-          .html(elementConfig.validationMessages.join("<br />"))
-          .addClass('tipvalidation-content')
-          .appendTo(contentBorders);
+            .html(elementConfig.validationMessages.join("<br />"))
+            .addClass('tipvalidation-content')
+            .appendTo(contentBorders);
 
         elementConfig.toolTipArrow = $('<div></div>')
-          .addClass("tipvalidation-arrow-" + elementConfig.generalConfig.position)
-          .appendTo(elementConfig.toolTip);
+            .addClass("tipvalidation-arrow-" + elementConfig.generalConfig.position)
+            .appendTo(elementConfig.toolTip);
 
         elementConfig.toolTip.appendTo('body');
 
@@ -567,7 +633,7 @@
                 queue: false,
                 duration: 200
             })
-        .fadeIn('fast');
+            .fadeIn('fast');
         });
     };
 
@@ -592,8 +658,8 @@
 
     $.tipValidation.removeAll = function (elements, config) {
         elements.each(function (index, element) {
-            var elementID = $(element).attr('id') || $(element).attr('name');
-            var toolTip = $('.' + config.containerClass + '[tipvalidation-link=' + elementID + ']');
+            var elementIdentifier = $(element).attr('id') || $(element).attr('name');
+            var toolTip = $('.' + config.containerClass + '[tipvalidation-link=' + elementIdentifier + ']');
 
             toolTip.fadeOut('fast', function () {
                 toolTip.remove();
@@ -602,13 +668,98 @@
     };
 
     $.tipValidation.removeExistingTooltip = function (elementConfig) {
-        var elementID = $(elementConfig.element).attr('id');
-        var toolTip = $('.' + elementConfig.generalConfig.containerClass + '[tipvalidation-link=' + elementID + ']');
+        var elementIdentifier = $(elementConfig.element).attr('id') || $(elementConfig.element).attr('name');
+        var toolTip = $('.' + elementConfig.generalConfig.containerClass + '[tipvalidation-link=' + elementIdentifier + ']');
 
         if (toolTip.length)
             toolTip.trigger('hideToolTip');
     };
 
-    //$.tipValidation.
+    $.tipValidation.highlightField = function (element) {
+        $(element).addClass('tipvalidation-highlighted');
+    };
+
+    $.tipValidation.removeHighlight = function (element) {
+        $(element).removeClass('tipvalidation-highlighted');
+    };
+
+    $.tipValidation.alreadyLinkedWithTooltip = function (element) {
+        return element.is('[tipvalidation-link]');
+    };
+
+    $.tipValidation.tooltipIsBuilt = function (element) {
+        if ($.tipValidation.alreadyLinkedWithTooltip(element)) {
+            var link = element.attr('tipvalidation-link');
+            var tooltip = $('.tipvalidation[tipvalidation-link=' + link + ']');
+            return tooltip.is(':visible');
+        }
+        else {
+            return false;
+        }
+    };
+
+    $.tipValidation.getTooltipByElement = function (element) {
+        if ($.tipValidation.tooltipIsBuilt(element)) {
+            var link = element.attr('tipvalidation-link');
+            return $('.tipvalidation[tipvalidation-link=' + link + ']');
+        }
+
+        return undefined;
+    };
+
+    $.tipValidation.changeTooltipContent = function (elementConfig) {
+        var element = elementConfig.element;
+        var messages = elementConfig.validationMessages.join('<br/>');
+        var mensagensAntigas = messages.split('<br/>');
+        var tooltip = $.tipValidation.getTooltipByElement(element);
+        var mensagensAtuais = tooltip.find('.tipvalidation-content').html().split('<br>');
+
+        var alturaOriginalDoConteudoDoTooltip = tooltip.find('.tipvalidation-content').height();
+        //tooltip.find('.tipvalidation-content').css('height', alturaOriginalDoConteudoDoTooltip);
+
+        tooltip.find('.tipvalidation-content').html('');
+        tooltip.find('.tipvalidation-content').html(messages);
+
+        var quantidadeDeMensagensMudou = (mensagensAntigas.length !== mensagensAtuais.length);
+
+        if (quantidadeDeMensagensMudou) {
+            var alturaAposMudancaDeConteudo = tooltip.find('.tipvalidation-content').height();
+
+            if (alturaAposMudancaDeConteudo > alturaOriginalDoConteudoDoTooltip) {
+                var diferencaDeAltura = Math.abs(mensagensAntigas.length - mensagensAtuais.length);
+                tooltip
+                    .animate({
+                        top: '-=' + (diferencaDeAltura * 16) + 'px',
+                        height: '+=' + (diferencaDeAltura * 16) + 'px'
+                    })
+                    .find('[class^=tipvalidation-arrow]').animate({
+                        marginTop: '+=' + (diferencaDeAltura * 16) + 'px'
+                    });
+            }
+            else {
+                var diferencaDeAltura = Math.abs(mensagensAntigas.length - mensagensAtuais.length);
+                tooltip
+                    .animate({
+                        top: '+=' + (diferencaDeAltura * 16) + 'px',
+                        height: '-=' + (diferencaDeAltura * 16) + 'px'
+                    })
+                    .find('[class^=tipvalidation-arrow]').animate({
+                        marginTop: '-=' + (diferencaDeAltura * 16) + 'px'
+                    });
+            }
+        }
+    };
+
+    $.tipValidation.contentIsSame = function (elementConfig) {
+        var element = elementConfig.element;
+        var mensagensAntigas = elementConfig.validationMessages;
+        var tooltip = $.tipValidation.getTooltipByElement(element);
+        var mensagensAtuais = tooltip.find('.tipvalidation-content').html().split('<br>');
+
+        var conteudoAntigo = mensagensAntigas.join('').replace(/\s/g, '');
+        var conteudoAtual = mensagensAtuais.join('').replace(/\s/g, '');
+
+        return (conteudoAntigo === conteudoAtual);
+    };
 
 })(jQuery);
