@@ -61,7 +61,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
             url: "/UsuarioJS/ObterCidadesPorEstado",
             parametros: parametros,
             successCallback: function (resultado) {
-                var dropDown = $('select[name=Cidade]'); //.removeAttr('disabled');
+                var dropDown = $('select[name=Cidade]');
 
                 dropDown.children().remove();
                 dropDown.append(new Option('Selecione'));
@@ -77,7 +77,10 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     that.salvarUsuario = function (event) {
         event.preventDefault();
 
-        var formEhValido = that.validador.estahValido(true, true);
+        var destacarCampos = true;
+        var mostrarToolTipsOnFocus = true;
+
+        var formEhValido = that.validador.estahValido(destacarCampos, mostrarToolTipsOnFocus);
 
         if (formEhValido) {
             var callback = function () { that.tabelaUsuarios.atualizar(); };
@@ -92,11 +95,11 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     that.excluirUsuario = function (event) {
         event.preventDefault();
 
-        var funcaoConfirmacao = function () {
+        var funcaoExecutadaNaConfirmacao = function () {
             that.tabelaUsuarios.excluirUsuario(event);
         }
 
-        ModeloIVIA.Componente.Dialog.confirm("Exclusão", "Deseja realmente excluir este usuário?", funcaoConfirmacao);
+        ModeloIVIA.Componente.Dialog.confirm("Exclusão", "Deseja realmente excluir este usuário?", funcaoExecutadaNaConfirmacao);
     };
 };
 

@@ -30,7 +30,7 @@
                 $.tipValidation.removeAll(this, config);
             };
 
-            that.isValid = function (highlightFields, showTooltipsOnMouseOver) {
+            that.isValid = function (highlightFields, showTooltipsOnFocus) {
 
                 var elements = this;
                 var isValid = true;
@@ -48,7 +48,7 @@
                             $.tipValidation.removeHighlight(element);
                         }
 
-                        if (showTooltipsOnMouseOver) {
+                        if (showTooltipsOnFocus) {
                             $.tipValidation.processFocusEvent(elementConfig);
                         }
 
