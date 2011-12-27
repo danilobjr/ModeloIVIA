@@ -19,9 +19,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     that.bigLoader = $('.loader');
 
 
-    // Comportamentos ======================================== /
-
-    // Slide
+    // Métodos
 
     that.mudarSlide = function (event) {
         var elemento = $(event.currentTarget);
@@ -31,11 +29,6 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
         that.slider.irParaSlide(indiceSlide);
         that.validador.removerTodos();
     };
-
-    $("#crudSections a").click(that.mudarSlide);
-
-
-    // CRUD
 
     that.obterUsuarioParaAlteracao = function (event) {
         event.preventDefault();
@@ -52,17 +45,12 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
         that.slider.irParaSlide(1);
     };
 
-    //$(that.tabelaUsuarios.obterTodasAsLinhas()).find('.alterar').live('click', that.obterUsuarioParaAlteracao);
-    $('.alterar').live('click', that.obterUsuarioParaAlteracao);
-
     that.limparCamposForm = function (event) {
         event.preventDefault();
         that.form.limpar();
         that.validador.removerDestaquesDoCampos();
         that.validador.removerTodos();
     };
-
-    $('#cancelar').click(that.limparCamposForm);
 
     that.obterCidadesPorEstado = function (event) {
         var elemento = $(event.currentTarget);
@@ -86,8 +74,6 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
         });
     };
 
-    $('select[name=Estado]').change(that.obterCidadesPorEstado);
-
     that.salvarUsuario = function (event) {
         event.preventDefault();
 
@@ -103,12 +89,8 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
         }
     };
 
-    $('#salvar').click(that.salvarUsuario);
-
     that.excluirUsuario = function (event) {
         event.preventDefault();
-
-        //var callback = function () { that.tabelaUsuarios.atualizar(); };
 
         var funcaoConfirmacao = function () {
             that.tabelaUsuarios.excluirUsuario(event);
@@ -116,8 +98,6 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
 
         ModeloIVIA.Componente.Dialog.confirm("Exclusão", "Deseja realmente excluir este usuário?", funcaoConfirmacao);
     };
-
-    $('.excluir').live('click', that.excluirUsuario);
 };
 
 
@@ -125,4 +105,11 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
 
 $(function () {
     var usuarioScript = new ModeloIVIA.Script.UsuarioJS();
+
+    $("#crudSections a").click(usuarioScript.mudarSlide);
+    $('.alterar').live('click', usuarioScript.obterUsuarioParaAlteracao);
+    $('.excluir').live('click', usuarioScript.excluirUsuario);
+    $('select[name=Estado]').change(usuarioScript.obterCidadesPorEstado);
+    $('#salvar').click(usuarioScript.salvarUsuario);
+    $('#cancelar').click(usuarioScript.limparCamposForm);
 });

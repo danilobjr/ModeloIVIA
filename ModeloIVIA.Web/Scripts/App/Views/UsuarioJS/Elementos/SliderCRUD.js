@@ -27,4 +27,4 @@ ModeloIVIA.Elemento.SliderCRUD.prototype.irParaSlide = function (indice) {
     elementoClicado.siblings().removeClass('tab-ativa');
 
     this.slider.goToSlide(indice);
-}
+};
