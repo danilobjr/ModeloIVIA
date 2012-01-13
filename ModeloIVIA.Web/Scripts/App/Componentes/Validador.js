@@ -45,7 +45,7 @@ ModeloIVIA.Componente.Validador.prototype = {
         /// <param name="mostrarTooltipOnFocus" type="Boolean"></param>
         /// <returns type="Boolean" />
 
-        this.validador.isValid(destacarCampos, mostrarTooltipOnMouseOver);
+        this.validador.isValid(destacarCampos, mostrarTooltipOnFocus);
     },
     removerDestaquesDoCampos: function () {
 
