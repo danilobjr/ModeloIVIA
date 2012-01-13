@@ -98,7 +98,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
 
         var funcaoExecutadaNaConfirmacao = function () {
             that.tabelaUsuarios.excluirUsuario(event);
-        }'
+        };
 
         that.dialog.confirm("Exclusão", "Deseja realmente excluir este usuário?", funcaoExecutadaNaConfirmacao);
     };
