@@ -16,6 +16,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
     that.tabelaUsuarios = that.viewModel.tabelaUsuarios;
     that.slider = that.viewModel.sliderCRUD;
     that.validador = that.viewModel.validador;
+    that.dialog = that.viewModel.dialog;
     that.bigLoader = $('.loader');
 
 
@@ -88,7 +89,7 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
             that.form.salvarUsuario(callback);
         }
         else {
-            ModeloIVIA.Componente.Dialog.alert("Validação", "Para salvar, é necessário preencher os campos corretamente.");
+            that.dialog.alert("Validação", "Para salvar, é necessário preencher os campos corretamente.");
         }
     };
 
@@ -97,9 +98,9 @@ ModeloIVIA.Script.UsuarioJS = function UsuarioJSScript() {
 
         var funcaoExecutadaNaConfirmacao = function () {
             that.tabelaUsuarios.excluirUsuario(event);
-        }
+        }'
 
-        ModeloIVIA.Componente.Dialog.confirm("Exclusão", "Deseja realmente excluir este usuário?", funcaoExecutadaNaConfirmacao);
+        that.dialog.confirm("Exclusão", "Deseja realmente excluir este usuário?", funcaoExecutadaNaConfirmacao);
     };
 };
 
